@@ -97,7 +97,7 @@ jobs:
 
       - name: Run custom scanner
         if: steps.check.outputs.exists == 'true'
-        run: python scanner/scanner.py . --output node-scan-results.json
+        run: python Scanner/scanner.py . --output node-scan-results.json
 
       - name: Upload node scan results
         if: steps.check.outputs.exists == 'true'
