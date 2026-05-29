@@ -202,7 +202,3 @@ This scanner addresses the known vulnerability vector — packages with publicly
 - Mirroring dependencies through a private registry to prevent dependency confusion attacks
 
 ---
-
-## License
-
-MIT
