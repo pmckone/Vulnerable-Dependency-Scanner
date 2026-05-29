@@ -6,7 +6,7 @@ Scans project dependencies for known CVEs using the [OSV.dev](https://osv.dev) d
 
 ## Features
 
-- Multi-ecosystem support — Python (`requirements.txt`), Node.js (`package.json`), Ruby (`Gemfile.lock`)
+- Multi-ecosystem support — Python (`requirements.txt`), Node.js (`package.json`)
 - Real CVE data — queries the open OSV.dev vulnerability database, no API key required
 - Build gate — exits with code `1` on HIGH/CRITICAL findings, failing CI pipelines
 - Structured output — JSON report saved after every scan
@@ -36,7 +36,7 @@ Vulnerable-Dependency-Scanner/
 
 ## Quick Start
 
-Make sure you have Python 3.8 or higher installed, then run:
+Python 3.8 or higher installed
 
 ```bash
 # scan the python sample project
@@ -167,40 +167,6 @@ The scanner saves a structured JSON report after every run. The default filename
   ]
 }
 ```
-
----
-
-## Adding More Ecosystems
-
-To add support for a new package manager, write a parser function and register it in `detect_and_parse()` inside `scanner.py`.
-
-Example — adding support for `Pipfile.lock`:
-
-```python
-def parse_pipfile_lock(filepath):
-    with open(filepath) as f:
-        data = json.load(f)
-    deps = []
-    for section in ("default", "develop"):
-        for name, meta in data.get(section, {}).items():
-            deps.append({
-                "name": name,
-                "version": meta.get("version", "").lstrip("="),
-                "ecosystem": "PyPI",
-                "raw": f"{name}=={meta.get('version', '')}"
-            })
-    return deps
-```
-
-Then add it to the checks list in `detect_and_parse()`:
-
-```python
-(project_path / "Pipfile.lock", parse_pipfile_lock, "Pipfile.lock"),
-```
-
-OSV supports these ecosystems: `PyPI`, `npm`, `RubyGems`, `Go`, `Maven`, `NuGet`, `crates.io`, `Hex`, `Packagist`
-
----
 
 ## Data Source
 
