@@ -34,7 +34,7 @@ jobs:
       - name: Run security scan
         id: scan
         run: |
-          python scanner/scanner.py . \
+          python Scanner/scanner.py . \
             --output scan-results.json \
             --verbose
         # Exit code 1 = HIGH/CRITICAL found → fails the build
