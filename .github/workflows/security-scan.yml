@@ -6,7 +6,6 @@ on:
   pull_request:
     branches: [ main ]
   schedule:
-    # Run daily at 06:00 UTC to catch newly disclosed CVEs
     - cron: '0 6 * * *'
 
 jobs:
@@ -37,10 +36,9 @@ jobs:
           python Scanner/scanner.py . \
             --output scan-results.json \
             --verbose
-        # Exit code 1 = HIGH/CRITICAL found → fails the build
 
       - name: Upload scan results artifact
-        if: always()   # Upload even if build failed
+        if: always() 
         uses: actions/upload-artifact@v4
         with:
           name: security-scan-results
@@ -66,7 +64,7 @@ jobs:
               body += `| \`${f.package}\` | ${f.version} | ${cve} | **${f.severity}** |\n`;
             }
 
-            body += `\n📄 Full report available in workflow artifacts.`;
+            body += `\n Full report available in workflow artifacts.`;
 
             github.rest.issues.createComment({
               issue_number: context.issue.number,
