@@ -10,13 +10,14 @@ on:
     - cron: '0 6 * * *'
 
 jobs:
-  dependency-scan:
-    name: CVE Dependency Scan
+  python-scan:
+    name: Python Dependency Scan
     runs-on: ubuntu-latest
 
     permissions:
       contents: read
-      security-events: write 
+      security-events: write
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -26,25 +27,18 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install scanner
-        run: |
-          pip install --upgrade pip
-          # No extra deps needed — scanner uses stdlib only
-
       - name: Run security scan
-        id: scan
         run: |
-          python scanner/scanner.py . \
-            --output scan-results.json \
+          python Scanner/scanner.py sample-projects/python-app \
+            --output scan-results-python.json \
             --verbose
-        # Exit code 1 = HIGH/CRITICAL found → fails the build
 
-      - name: Upload scan results artifact
-        if: always()   # Upload even if build failed
+      - name: Upload python scan results
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: security-scan-results
-          path: scan-results.json
+          name: scan-results-python
+          path: scan-results-python.json
           retention-days: 90
 
       - name: Comment PR with findings
@@ -53,10 +47,10 @@ jobs:
         with:
           script: |
             const fs = require('fs');
-            const report = JSON.parse(fs.readFileSync('scan-results.json', 'utf8'));
+            const report = JSON.parse(fs.readFileSync('scan-results-python.json', 'utf8'));
             const blocking = report.findings.filter(f => f.fail_build);
 
-            let body = `## Security Scan Failed\n\n`;
+            let body = `## Security Scan Failed - Python\n\n`;
             body += `Found **${blocking.length}** HIGH/CRITICAL vulnerabilities:\n\n`;
             body += `| Package | Version | CVE | Severity |\n`;
             body += `|---------|---------|-----|----------|\n`;
@@ -66,7 +60,7 @@ jobs:
               body += `| \`${f.package}\` | ${f.version} | ${cve} | **${f.severity}** |\n`;
             }
 
-            body += `\n📄 Full report available in workflow artifacts.`;
+            body += `\nFull report available in workflow artifacts.`;
 
             github.rest.issues.createComment({
               issue_number: context.issue.number,
@@ -79,29 +73,69 @@ jobs:
     name: Node.js Dependency Scan
     runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v4
+    permissions:
+      contents: read
+      security-events: write
 
-      - name: Check for package.json
-        id: check
-        run: |
-          if [ -f package.json ]; then
-            echo "exists=true" >> $GITHUB_OUTPUT
-          else
-            echo "exists=false" >> $GITHUB_OUTPUT
-          fi
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
 
       - name: Run npm audit
-        if: steps.check.outputs.exists == 'true'
-        run: npm audit --audit-level=high
+        run: |
+          cd sample-projects/node-app
+          npm install --package-lock-only
+          npm audit --audit-level=high
+        continue-on-error: true
 
       - name: Run custom scanner
-        if: steps.check.outputs.exists == 'true'
-        run: python scanner/scanner.py . --output node-scan-results.json
+        run: |
+          python Scanner/scanner.py sample-projects/node-app \
+            --output scan-results-node.json \
+            --verbose
 
       - name: Upload node scan results
-        if: steps.check.outputs.exists == 'true'
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: node-scan-results
-          path: node-scan-results.json
+          name: scan-results-node
+          path: scan-results-node.json
+          retention-days: 90
+
+      - name: Comment PR with findings
+        if: github.event_name == 'pull_request' && failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const report = JSON.parse(fs.readFileSync('scan-results-node.json', 'utf8'));
+            const blocking = report.findings.filter(f => f.fail_build);
+
+            let body = `## Security Scan Failed - Node.js\n\n`;
+            body += `Found **${blocking.length}** HIGH/CRITICAL vulnerabilities:\n\n`;
+            body += `| Package | Version | CVE | Severity |\n`;
+            body += `|---------|---------|-----|----------|\n`;
+
+            for (const f of blocking) {
+              const cve = f.cve_ids.length ? f.cve_ids[0] : f.vuln_id;
+              body += `| \`${f.package}\` | ${f.version} | ${cve} | **${f.severity}** |\n`;
+            }
+
+            body += `\nFull report available in workflow artifacts.`;
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body
+            });
