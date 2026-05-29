@@ -1,0 +1,13 @@
+# sample python app - intentionally outdated versions for scanner testing
+# do not use these versions in production
+ 
+requests==2.18.0
+Pillow==8.2.0
+cryptography==2.6.1
+PyYAML==5.1
+urllib3==1.24.1
+Django==2.1.0
+lxml==4.1.0
+paramiko==2.4.1
+flask==0.12.2
+jinja2==2.10
