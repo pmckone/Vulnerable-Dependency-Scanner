@@ -27,6 +27,9 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Install scanner dependencies
+        run: pip install -r requirements.txt
+
       - name: Run security scan
         run: |
           python Scanner/scanner.py sample-projects/python-app \
@@ -91,6 +94,9 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Install scanner dependencies
+        run: pip install -r requirements.txt
+
       - name: Run npm audit
         run: |
           cd sample-projects/node-app
@@ -139,3 +145,69 @@ jobs:
               repo: context.repo.repo,
               body
             });
+
+  ruby-scan:
+    name: Ruby Dependency Scan
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install scanner dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run security scan
+        run: |
+          python Scanner/scanner.py sample-projects/ruby-app \
+            --output scan-results-ruby.json \
+            --verbose
+
+      - name: Upload ruby scan results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: scan-results-ruby
+          path: scan-results-ruby.json
+          retention-days: 90
+
+  clean-scan:
+    name: Clean App Scan (expected to pass)
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install scanner dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run security scan
+        run: |
+          python Scanner/scanner.py sample-projects/clean-app \
+            --output scan-results-clean.json \
+            --verbose
+
+      - name: Upload clean scan results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: scan-results-clean
+          path: scan-results-clean.json
+          retention-days: 90
