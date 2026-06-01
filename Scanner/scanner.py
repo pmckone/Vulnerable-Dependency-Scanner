@@ -5,12 +5,20 @@ import argparse
 import urllib.request
 import urllib.error
 import re
+import threading
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from datetime import datetime
 
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass 
 
-#PUBLIC API KEY
-OSV_API_URL = os.environ.get("OSV_API_URL", "https://api.osv.dev/v1/query")
+OSV_API_URL = os.getenv("PUBLICAPI", "https://api.osv.dev/v1/query")
+
+MAX_WORKERS = int(os.getenv("MAX_WORKERS", "10"))
 
 SEVERITY_SCORES = {
     "CRITICAL": 4,
@@ -19,9 +27,7 @@ SEVERITY_SCORES = {
     "LOW": 1,
     "UNKNOWN": 0,
 }
-
-FAIL_ON_SEVERITY = ["CRITICAL", "HIGH"] 
-
+FAIL_ON_SEVERITY = ["CRITICAL", "HIGH"]
 def parse_requirements_txt(filepath):
     deps = []
     with open(filepath) as f:
@@ -112,7 +118,6 @@ def detect_and_parse(project_path):
     return found
 
 def query_osv(package_name, version, ecosystem):
-    """Query OSV.dev for known vulnerabilities."""
     payload = {
         "package": {
             "name": package_name,
@@ -164,43 +169,69 @@ def extract_severity(vuln):
 
     return severity, score
 
-def scan_dependencies(deps, verbose=False):
-    """Query OSV for each dependency and collect findings."""
+def scan_single(dep, verbose=False, counter=None, total=None, lock=None):
+    name = dep["name"]
+    version = dep.get("version")
+    ecosystem = dep.get("ecosystem", "PyPI")
     findings = []
-    total = len(deps)
 
-    for i, dep in enumerate(deps, 1):
-        name = dep["name"]
-        version = dep.get("version")
-        ecosystem = dep.get("ecosystem", "PyPI")
+    vulns = query_osv(name, version, ecosystem)
 
-        if verbose:
-            print(f"  [{i}/{total}] checking {name}@{version or 'unknown'} ({ecosystem})")
+    for vuln in vulns:
+        severity, cvss = extract_severity(vuln)
+        aliases = vuln.get("aliases", [])
+        cve_ids = [a for a in aliases if a.startswith("CVE-")]
 
-        vulns = query_osv(name, version, ecosystem)
+        findings.append({
+            "package": name,
+            "version": version or "unspecified",
+            "ecosystem": ecosystem,
+            "vuln_id": vuln.get("id", "UNKNOWN"),
+            "cve_ids": cve_ids,
+            "summary": vuln.get("summary", "No summary available"),
+            "severity": severity,
+            "cvss": cvss,
+            "published": vuln.get("published", ""),
+            "modified": vuln.get("modified", ""),
+            "references": [r.get("url") for r in vuln.get("references", [])[:3]],
+            "fail_build": severity in FAIL_ON_SEVERITY,
+        })
 
-        for vuln in vulns:
-            severity, cvss = extract_severity(vuln)
-            aliases = vuln.get("aliases", [])
-            cve_ids = [a for a in aliases if a.startswith("CVE-")]
-
-            findings.append({
-                "package": name,
-                "version": version or "unspecified",
-                "ecosystem": ecosystem,
-                "vuln_id": vuln.get("id", "UNKNOWN"),
-                "cve_ids": cve_ids,
-                "summary": vuln.get("summary", "No summary available"),
-                "severity": severity,
-                "cvss": cvss,
-                "published": vuln.get("published", ""),
-                "modified": vuln.get("modified", ""),
-                "references": [r.get("url") for r in vuln.get("references", [])[:3]],
-                "fail_build": severity in FAIL_ON_SEVERITY,
-            })
+    if verbose and lock and counter is not None:
+        with lock:
+            counter[0] += 1
+            print(f"  [{counter[0]}/{total}] checked {name}@{version or 'unknown'} ({ecosystem}) - {len(vulns)} finding(s)")
 
     return findings
 
+
+def scan_dependencies(deps, verbose=False):
+    all_findings = []
+    total = len(deps)
+    counter = [0]
+    lock = threading.Lock()
+
+    if verbose:
+        print(f"  running {min(MAX_WORKERS, total)} workers in parallel")
+
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+        futures = {
+            executor.submit(scan_single, dep, verbose, counter, total, lock): dep
+            for dep in deps
+        }
+
+        for future in as_completed(futures):
+            dep = futures[future]
+            try:
+                findings = future.result()
+                all_findings.extend(findings)
+            except Exception as e:
+                print(f"  warning: scan failed for {dep['name']} ({e})")
+
+    severity_order = ["CRITICAL", "HIGH", "MEDIUM", "LOW", "UNKNOWN"]
+    all_findings.sort(key=lambda f: severity_order.index(f["severity"]) if f["severity"] in severity_order else 99)
+
+    return all_findings
 def severity_label(severity):
     labels = {
         "CRITICAL": "[CRITICAL]",
@@ -258,11 +289,11 @@ def print_report(findings, deps_count):
             print(f"  {sev:<10}  {c}")
 
 def save_json_report(findings, deps_count, output_path):
-    """Save structured JSON report."""
     report = {
         "scan_time": datetime.now().isoformat(),
         "deps_scanned": deps_count,
         "total_findings": len(findings),
+        "workers_used": MAX_WORKERS,
         "findings": findings,
         "summary": {
             s: len([f for f in findings if f["severity"] == s])
@@ -275,7 +306,6 @@ def save_json_report(findings, deps_count, output_path):
     return report
 
 def evaluate_build_gate(findings):
-    """Return exit code: 0 = pass, 1 = fail."""
     blocking = [f for f in findings if f["fail_build"]]
     if blocking:
         print()
@@ -336,7 +366,11 @@ def main():
 
     print()
     print(f"Scanning {len(deps)} dependencies against OSV.dev...")
+    print(f"  workers: {min(MAX_WORKERS, len(deps))}  (set MAX_WORKERS to adjust)")
+    scan_start = datetime.now()
     findings = scan_dependencies(deps, verbose=args.verbose)
+    elapsed = (datetime.now() - scan_start).total_seconds()
+    print(f"  scan completed in {elapsed:.1f}s")
 
     print_report(findings, len(deps))
     save_json_report(findings, len(deps), args.output)
