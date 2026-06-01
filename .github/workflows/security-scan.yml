@@ -33,7 +33,7 @@ jobs:
       - name: Run security scan
         run: |
           python Scanner/scanner.py sample-projects/python-app \
-            --output scan-results-python.json \
+            --output ${{ github.workspace }}/scan-results-python.json \
             --verbose
 
       - name: Upload python scan results
@@ -41,8 +41,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: scan-results-python
-          path: scan-results-python.json
+          path: ${{ github.workspace }}/scan-results-python.json
           retention-days: 90
+          if-no-files-found: warn
 
       - name: Comment PR with findings
         if: github.event_name == 'pull_request' && failure()
@@ -107,7 +108,7 @@ jobs:
       - name: Run custom scanner
         run: |
           python Scanner/scanner.py sample-projects/node-app \
-            --output scan-results-node.json \
+            --output ${{ github.workspace }}/scan-results-node.json \
             --verbose
 
       - name: Upload node scan results
@@ -115,8 +116,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: scan-results-node
-          path: scan-results-node.json
+          path: ${{ github.workspace }}/scan-results-node.json
           retention-days: 90
+          if-no-files-found: warn
 
       - name: Comment PR with findings
         if: github.event_name == 'pull_request' && failure()
@@ -168,7 +170,7 @@ jobs:
       - name: Run security scan
         run: |
           python Scanner/scanner.py sample-projects/ruby-app \
-            --output scan-results-ruby.json \
+            --output ${{ github.workspace }}/scan-results-ruby.json \
             --verbose
 
       - name: Upload ruby scan results
@@ -176,8 +178,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: scan-results-ruby
-          path: scan-results-ruby.json
+          path: ${{ github.workspace }}/scan-results-ruby.json
           retention-days: 90
+          if-no-files-found: warn
 
   clean-scan:
     name: Clean App Scan (expected to pass)
@@ -201,7 +204,7 @@ jobs:
       - name: Run security scan
         run: |
           python Scanner/scanner.py sample-projects/clean-app \
-            --output scan-results-clean.json \
+            --output ${{ github.workspace }}/scan-results-clean.json \
             --verbose
 
       - name: Upload clean scan results
@@ -209,5 +212,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: scan-results-clean
-          path: scan-results-clean.json
+          path: ${{ github.workspace }}/scan-results-clean.json
           retention-days: 90
+          if-no-files-found: warn

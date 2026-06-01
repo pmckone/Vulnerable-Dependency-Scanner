@@ -1,12 +1,6 @@
 # current safe state of requirements.txt as of June 1 2026.
 
 requests==2.32.3
-Pillow==10.4.0
-cryptography==43.0.1
 PyYAML==6.0.2
-urllib3==2.2.3
-Django==5.1.1
-lxml==5.3.0
-paramiko==3.5.0
-flask==3.0.3
-jinja2==3.1.4
+flask==3.1.1
+jinja2==3.1.6
