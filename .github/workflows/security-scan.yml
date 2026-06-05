@@ -6,7 +6,6 @@ on:
   pull_request:
     branches: [ main ]
   schedule:
-    # Run daily at 06:00 UTC to catch newly disclosed CVEs
     - cron: '0 6 * * *'
 
 jobs:
@@ -32,7 +31,7 @@ jobs:
 
       - name: Run security scan
         run: |
-          python Scanner/scanner.py sample-projects/python-app \
+          python scanner.py sample-projects/python-app \
             --output ${{ github.workspace }}/scan-results-python.json \
             --verbose
 
@@ -107,7 +106,7 @@ jobs:
 
       - name: Run custom scanner
         run: |
-          python Scanner/scanner.py sample-projects/node-app \
+          python scanner.py sample-projects/node-app \
             --output ${{ github.workspace }}/scan-results-node.json \
             --verbose
 
@@ -169,7 +168,7 @@ jobs:
 
       - name: Run security scan
         run: |
-          python Scanner/scanner.py sample-projects/ruby-app \
+          python scanner.py sample-projects/ruby-app \
             --output ${{ github.workspace }}/scan-results-ruby.json \
             --verbose
 
@@ -203,7 +202,7 @@ jobs:
 
       - name: Run security scan
         run: |
-          python Scanner/scanner.py sample-projects/clean-app \
+          python scanner.py sample-projects/clean-app \
             --output ${{ github.workspace }}/scan-results-clean.json \
             --verbose
 
@@ -213,5 +212,56 @@ jobs:
         with:
           name: scan-results-clean
           path: ${{ github.workspace }}/scan-results-clean.json
+          retention-days: 90
+          if-no-files-found: warn
+
+  transitive-scan:
+    name: Full Transitive Tree Scan
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install scanner dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run transitive scan on python sample
+        run: |
+          python scanner.py sample-projects/python-app \
+            --transitive \
+            --output ${{ github.workspace }}/scan-results-transitive-python.json \
+            --verbose
+        continue-on-error: true
+
+      - name: Run transitive scan on node sample
+        run: |
+          python scanner.py sample-projects/node-app \
+            --transitive \
+            --output ${{ github.workspace }}/scan-results-transitive-node.json \
+            --verbose
+        continue-on-error: true
+
+      - name: Upload transitive scan results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: scan-results-transitive
+          path: |
+            ${{ github.workspace }}/scan-results-transitive-python.json
+            ${{ github.workspace }}/scan-results-transitive-node.json
           retention-days: 90
           if-no-files-found: warn

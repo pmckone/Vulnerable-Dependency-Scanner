@@ -1,0 +1,3609 @@
+{
+  "scan_time": "2026-06-05T15:34:32.553329",
+  "deps_scanned": 19,
+  "transitive_mode": true,
+  "total_findings": 172,
+  "direct_findings": 172,
+  "transitive_findings": 0,
+  "workers_used": 10,
+  "findings": [
+    {
+      "package": "PyYAML",
+      "version": "5.1",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-3pqx-4fqf-j49f",
+      "cve_ids": [
+        "CVE-2019-20477"
+      ],
+      "summary": "Deserialization of Untrusted Data in PyYAML",
+      "severity": "CRITICAL",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "published": "2021-04-20T16:40:42Z",
+      "modified": "2024-10-25T21:23:11.506576Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2019-20477",
+        "https://github.com/advisories/GHSA-3pqx-4fqf-j49f",
+        "https://github.com/pypa/advisory-database/tree/main/vulns/pyyaml/PYSEC-2020-176.yaml"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "PyYAML",
+      "version": "5.1",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-6757-jp84-gxfx",
+      "cve_ids": [
+        "CVE-2020-1747"
+      ],
+      "summary": "Improper Input Validation in PyYAML",
+      "severity": "CRITICAL",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "published": "2021-04-20T16:14:24Z",
+      "modified": "2026-05-04T08:57:14.897560893Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2020-1747",
+        "https://github.com/github/advisory-database/pull/4942",
+        "https://github.com/yaml/pyyaml/pull/386"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "PyYAML",
+      "version": "5.1",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-8q59-q68h-6hv4",
+      "cve_ids": [
+        "CVE-2020-14343"
+      ],
+      "summary": "Improper Input Validation in PyYAML",
+      "severity": "CRITICAL",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "published": "2021-03-25T21:26:26Z",
+      "modified": "2026-02-04T03:33:10.792778Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2020-14343",
+        "https://github.com/SeldonIO/seldon-core/issues/2252",
+        "https://github.com/yaml/pyyaml/issues/420"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "Pillow",
+      "version": "8.2.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-3f63-hfp8-52jq",
+      "cve_ids": [
+        "CVE-2023-50447"
+      ],
+      "summary": "Arbitrary Code Execution in Pillow",
+      "severity": "CRITICAL",
+      "cvss": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "published": "2024-01-19T21:30:35Z",
+      "modified": "2026-02-04T02:45:35.544912Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2023-50447",
+        "https://github.com/python-pillow/Pillow/commit/45c726fd4daa63236a8f3653530f297dc87b160a",
+        "https://devhub.checkmarx.com/cve-details/CVE-2023-50447"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "Pillow",
+      "version": "8.2.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-7534-mm45-c74v",
+      "cve_ids": [
+        "CVE-2021-34552"
+      ],
+      "summary": "Buffer Overflow in Pillow",
+      "severity": "CRITICAL",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "published": "2021-10-05T20:24:41Z",
+      "modified": "2024-10-09T21:10:34.327533Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2021-34552",
+        "https://github.com/python-pillow/Pillow/pull/5567",
+        "https://github.com/python-pillow/Pillow/commit/31c473898c29d1b7cb6555ce67d9503a4906b83f"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "Pillow",
+      "version": "8.2.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-8vj2-vxx3-667w",
+      "cve_ids": [
+        "CVE-2022-22817"
+      ],
+      "summary": "Arbitrary expression injection in Pillow",
+      "severity": "CRITICAL",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "published": "2022-01-12T20:07:33Z",
+      "modified": "2024-10-14T18:26:08.636369Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2022-22817",
+        "https://github.com/python-pillow/Pillow/commit/8531b01d6cdf0b70f256f93092caa2a5d91afc11",
+        "https://github.com/advisories/GHSA-8vj2-vxx3-667w"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "Django",
+      "version": "2.1.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-6r97-cj55-9hrq",
+      "cve_ids": [
+        "CVE-2019-14234"
+      ],
+      "summary": "SQL Injection in Django",
+      "severity": "CRITICAL",
+      "cvss": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "published": "2019-08-16T14:00:34Z",
+      "modified": "2025-02-21T05:50:19.980781Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2019-14234",
+        "https://github.com/django/django/commit/4f5b58f5cd3c57fee9972ab074f8dc6895d8f387",
+        "https://github.com/django/django/commit/ed682a24fca774818542757651bfba576c3fc3ef"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "Django",
+      "version": "2.1.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-frmv-pr5f-9mcr",
+      "cve_ids": [
+        "CVE-2025-64459"
+      ],
+      "summary": "Django vulnerable to SQL injection via _connector keyword argument in QuerySet and Q objects.",
+      "severity": "CRITICAL",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "published": "2025-11-05T15:31:07Z",
+      "modified": "2026-06-05T14:45:52.053173828Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-64459",
+        "https://github.com/django/django/commit/06dd38324ac3d60d83d9f3adabf0dcdf423d2a85",
+        "https://github.com/django/django/commit/59ae82e67053d281ff4562a24bbba21299f0a7d4"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "Django",
+      "version": "2.1.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-hmr4-m2h5-33qx",
+      "cve_ids": [
+        "CVE-2020-7471"
+      ],
+      "summary": "SQL injection in Django",
+      "severity": "CRITICAL",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "published": "2020-02-11T21:03:20Z",
+      "modified": "2025-02-21T06:12:43.981276Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2020-7471",
+        "https://github.com/django/django/commit/001b0634cd309e372edb6d7d95d083d02b8e37bd",
+        "https://github.com/django/django/commit/505826b469b16ab36693360da9e11fd13213421b"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "Django",
+      "version": "2.1.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-vfq6-hq5r-27r6",
+      "cve_ids": [
+        "CVE-2019-19844"
+      ],
+      "summary": "Django Potential account hijack via password reset form",
+      "severity": "CRITICAL",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "published": "2020-01-16T22:35:12Z",
+      "modified": "2024-09-20T15:24:05.816291Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2019-19844",
+        "https://github.com/django/django/commit/302a4ff1e8b1c798aab97673909c7a3dfda42c26",
+        "https://github.com/django/django/commit/4d334bea06cac63dc1272abcec545b85136cca0e"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "paramiko",
+      "version": "2.4.1",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-f2j6-wrhh-v25m",
+      "cve_ids": [
+        "CVE-2018-1000805"
+      ],
+      "summary": "Paramiko Authentication Bypass vulnerability",
+      "severity": "HIGH",
+      "cvss": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "published": "2018-10-10T16:10:10Z",
+      "modified": "2024-10-09T21:10:55.704277Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2018-1000805",
+        "https://github.com/paramiko/paramiko/issues/1283",
+        "https://access.redhat.com/errata/RHBA-2018:3497"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "requests",
+      "version": "2.18.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-x84v-xcm2-53pg",
+      "cve_ids": [
+        "CVE-2018-18074"
+      ],
+      "summary": "Insufficiently Protected Credentials in Requests",
+      "severity": "HIGH",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "published": "2018-10-29T19:06:46Z",
+      "modified": "2024-10-21T21:42:55.896669Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2018-18074",
+        "https://github.com/requests/requests/issues/4716",
+        "https://github.com/requests/requests/pull/4718"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "jinja2",
+      "version": "2.10",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-462w-v97r-4m45",
+      "cve_ids": [
+        "CVE-2019-10906"
+      ],
+      "summary": "Jinja2 sandbox escape via string formatting",
+      "severity": "HIGH",
+      "cvss": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N",
+      "published": "2019-04-10T14:30:24Z",
+      "modified": "2024-09-24T21:03:59.802687Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2019-10906",
+        "https://usn.ubuntu.com/4011-2",
+        "https://usn.ubuntu.com/4011-1"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "lxml",
+      "version": "4.1.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-vfmq-68hx-4jfw",
+      "cve_ids": [
+        "CVE-2026-41066"
+      ],
+      "summary": "lxml: Default configuration of iterparse() and ETCompatXMLParser() allows XXE to local files",
+      "severity": "HIGH",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "published": "2026-04-21T20:38:44Z",
+      "modified": "2026-05-20T08:11:36.474220974Z",
+      "references": [
+        "https://github.com/lxml/lxml/security/advisories/GHSA-vfmq-68hx-4jfw",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-41066",
+        "https://bugs.launchpad.net/lxml/+bug/2146291"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "cryptography",
+      "version": "2.6.1",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-3ww4-gg4f-jr7f",
+      "cve_ids": [
+        "CVE-2023-50782"
+      ],
+      "summary": "Python Cryptography package vulnerable to Bleichenbacher timing oracle attack",
+      "severity": "HIGH",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "published": "2024-02-05T21:30:31Z",
+      "modified": "2026-02-28T05:12:47.573911Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2023-50782",
+        "https://github.com/pyca/cryptography/issues/9785",
+        "https://access.redhat.com/security/cve/CVE-2023-50782"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "cryptography",
+      "version": "2.6.1",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-hggm-jpg3-v476",
+      "cve_ids": [
+        "CVE-2020-25659"
+      ],
+      "summary": "RSA decryption vulnerable to Bleichenbacher timing vulnerability",
+      "severity": "HIGH",
+      "cvss": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "published": "2020-10-27T20:33:13Z",
+      "modified": "2024-11-24T05:24:23.229640Z",
+      "references": [
+        "https://github.com/pyca/cryptography/security/advisories/GHSA-hggm-jpg3-v476",
+        "https://nvd.nist.gov/vuln/detail/CVE-2020-25659",
+        "https://github.com/pyca/cryptography/pull/5507"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "cryptography",
+      "version": "2.6.1",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-r6ph-v2qm-q3c2",
+      "cve_ids": [
+        "CVE-2026-26007"
+      ],
+      "summary": "cryptography Vulnerable to a Subgroup Attack Due to Missing Subgroup Validation for SECT Curves",
+      "severity": "HIGH",
+      "cvss": null,
+      "published": "2026-02-10T21:27:06Z",
+      "modified": "2026-05-11T00:41:25.223427584Z",
+      "references": [
+        "https://github.com/pyca/cryptography/security/advisories/GHSA-r6ph-v2qm-q3c2",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-26007",
+        "https://github.com/pyca/cryptography/commit/0eebb9dbb6343d9bc1d91e5a2482ed4e054a6d8c"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "cryptography",
+      "version": "2.6.1",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-x4qr-2fvf-3mr5",
+      "cve_ids": [
+        "CVE-2023-0286"
+      ],
+      "summary": "Vulnerable OpenSSL included in cryptography wheels",
+      "severity": "HIGH",
+      "cvss": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:H",
+      "published": "2023-02-08T22:17:06Z",
+      "modified": "2026-02-04T03:52:58.797593Z",
+      "references": [
+        "https://github.com/pyca/cryptography/security/advisories/GHSA-x4qr-2fvf-3mr5",
+        "https://nvd.nist.gov/vuln/detail/CVE-2023-0286",
+        "https://access.redhat.com/security/cve/cve-2023-0286"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "urllib3",
+      "version": "1.24.1",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-2xpw-w6gg-jr37",
+      "cve_ids": [
+        "CVE-2025-66471"
+      ],
+      "summary": "urllib3 streaming API improperly handles highly compressed data",
+      "severity": "HIGH",
+      "cvss": null,
+      "published": "2025-12-05T18:15:54Z",
+      "modified": "2026-02-04T02:36:12.983430Z",
+      "references": [
+        "https://github.com/urllib3/urllib3/security/advisories/GHSA-2xpw-w6gg-jr37",
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-66471",
+        "https://github.com/urllib3/urllib3/commit/c19571de34c47de3a766541b041637ba5f716ed7"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "urllib3",
+      "version": "1.24.1",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-38jv-5279-wg99",
+      "cve_ids": [
+        "CVE-2026-21441"
+      ],
+      "summary": "Decompression-bomb safeguards bypassed when following HTTP redirects (streaming API)",
+      "severity": "HIGH",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "published": "2026-01-07T19:18:14Z",
+      "modified": "2026-02-04T03:51:36.162029Z",
+      "references": [
+        "https://github.com/urllib3/urllib3/security/advisories/GHSA-38jv-5279-wg99",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-21441",
+        "https://github.com/urllib3/urllib3/commit/8864ac407bba8607950025e0979c4c69bc7abc7b"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "urllib3",
+      "version": "1.24.1",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-gm62-xv2j-4w53",
+      "cve_ids": [
+        "CVE-2025-66418"
+      ],
+      "summary": "urllib3 allows an unbounded number of links in the decompression chain",
+      "severity": "HIGH",
+      "cvss": null,
+      "published": "2025-12-05T18:15:19Z",
+      "modified": "2026-02-04T03:37:15.919661Z",
+      "references": [
+        "https://github.com/urllib3/urllib3/security/advisories/GHSA-gm62-xv2j-4w53",
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-66418",
+        "https://github.com/urllib3/urllib3/commit/24d7b67eac89f94e11003424bcf0d8f7b72222a8"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "urllib3",
+      "version": "1.24.1",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-mh33-7rrq-662w",
+      "cve_ids": [
+        "CVE-2019-11324"
+      ],
+      "summary": "Improper Certificate Validation in urllib3",
+      "severity": "HIGH",
+      "cvss": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+      "published": "2019-04-19T16:55:10Z",
+      "modified": "2024-11-18T22:25:21.266722Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2019-11324",
+        "https://github.com/urllib3/urllib3/commit/1efadf43dc63317cd9eaa3e0fdb9e05ab07254b1",
+        "https://access.redhat.com/errata/RHSA-2019:3335"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "urllib3",
+      "version": "1.24.1",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-qccp-gfcp-xxvc",
+      "cve_ids": [
+        "CVE-2026-44431"
+      ],
+      "summary": "urllib3: Sensitive headers forwarded across origins in proxied low-level redirects",
+      "severity": "HIGH",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+      "published": "2026-05-11T14:51:20Z",
+      "modified": "2026-05-20T08:11:43.145797382Z",
+      "references": [
+        "https://github.com/urllib3/urllib3/security/advisories/GHSA-qccp-gfcp-xxvc",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-44431",
+        "https://github.com/urllib3/urllib3"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "urllib3",
+      "version": "1.24.1",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-v845-jxx5-vc9f",
+      "cve_ids": [
+        "CVE-2023-43804"
+      ],
+      "summary": "`Cookie` HTTP header isn't stripped on cross-origin redirects",
+      "severity": "HIGH",
+      "cvss": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:N",
+      "published": "2023-10-02T23:27:05Z",
+      "modified": "2026-02-04T02:58:30.152562Z",
+      "references": [
+        "https://github.com/urllib3/urllib3/security/advisories/GHSA-v845-jxx5-vc9f",
+        "https://nvd.nist.gov/vuln/detail/CVE-2023-43804",
+        "https://github.com/urllib3/urllib3/commit/01220354d389cd05474713f8c982d05c9b17aafb"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "flask",
+      "version": "0.12.2",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-562c-5r94-xh97",
+      "cve_ids": [
+        "CVE-2018-1000656"
+      ],
+      "summary": "Flask is vulnerable to Denial of Service via incorrect encoding of JSON data",
+      "severity": "HIGH",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "published": "2018-08-23T19:10:40Z",
+      "modified": "2025-02-21T05:29:40.872529Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2018-1000656",
+        "https://github.com/pallets/flask/pull/2691",
+        "https://github.com/pallets/flask/commit/b178e89e4456e777b1a7ac6d7199052d0dfdbbbe"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "flask",
+      "version": "0.12.2",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-5wv5-4vpf-pj6m",
+      "cve_ids": [
+        "CVE-2019-1010083"
+      ],
+      "summary": "Pallets Project Flask is vulnerable to Denial of Service via Unexpected memory usage",
+      "severity": "HIGH",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "published": "2019-07-19T16:12:46Z",
+      "modified": "2024-09-20T21:24:25.140560Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2019-1010083",
+        "https://github.com/advisories/GHSA-5wv5-4vpf-pj6m",
+        "https://github.com/pallets/flask"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "flask",
+      "version": "0.12.2",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-m2qf-hxjv-5gpq",
+      "cve_ids": [
+        "CVE-2023-30861"
+      ],
+      "summary": "Flask vulnerable to possible disclosure of permanent session cookie due to missing Vary: Cookie header",
+      "severity": "HIGH",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "published": "2023-05-01T19:22:20Z",
+      "modified": "2025-02-21T05:42:17.337040Z",
+      "references": [
+        "https://github.com/pallets/flask/security/advisories/GHSA-m2qf-hxjv-5gpq",
+        "https://nvd.nist.gov/vuln/detail/CVE-2023-30861",
+        "https://github.com/pallets/flask/commit/70f906c51ce49c485f1d355703e9cc3386b1cc2b"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "httplib2",
+      "version": "0.9.2",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-93xj-8mrv-444m",
+      "cve_ids": [
+        "CVE-2021-21240"
+      ],
+      "summary": "Regular Expression Denial of Service (REDoS) in httplib2",
+      "severity": "HIGH",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "published": "2021-02-08T19:41:59Z",
+      "modified": "2026-03-13T22:15:17.171855Z",
+      "references": [
+        "https://github.com/httplib2/httplib2/security/advisories/GHSA-93xj-8mrv-444m",
+        "https://nvd.nist.gov/vuln/detail/CVE-2021-21240",
+        "https://github.com/httplib2/httplib2/pull/182"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "bleach",
+      "version": "2.1.3",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-vqhp-cxgc-6wmm",
+      "cve_ids": [
+        "CVE-2020-6817"
+      ],
+      "summary": "regular expression denial-of-service (ReDoS) in Bleach",
+      "severity": "HIGH",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "published": "2020-03-30T19:45:56Z",
+      "modified": "2026-03-13T22:14:05.326936Z",
+      "references": [
+        "https://github.com/mozilla/bleach/security/advisories/GHSA-vqhp-cxgc-6wmm",
+        "https://nvd.nist.gov/vuln/detail/CVE-2020-6817",
+        "https://bugzilla.mozilla.org/show_bug.cgi?id=1623633"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "Pillow",
+      "version": "8.2.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-44wm-f244-xhp3",
+      "cve_ids": [
+        "CVE-2024-28219"
+      ],
+      "summary": "Pillow buffer overflow vulnerability",
+      "severity": "HIGH",
+      "cvss": "CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:H",
+      "published": "2024-04-03T03:30:30Z",
+      "modified": "2026-02-04T02:29:33.536206Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-28219",
+        "https://github.com/python-pillow/Pillow/commit/2a93aba5cfcf6e241ab4f9392c13e3b74032c061",
+        "https://github.com/python-pillow/Pillow"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "Pillow",
+      "version": "8.2.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-8ghj-p4vj-mr35",
+      "cve_ids": [
+        "CVE-2023-44271"
+      ],
+      "summary": "Pillow Denial of Service vulnerability",
+      "severity": "HIGH",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "published": "2023-11-03T06:36:30Z",
+      "modified": "2024-10-14T21:23:45.339098Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2023-44271",
+        "https://github.com/python-pillow/Pillow/pull/7244",
+        "https://github.com/python-pillow/Pillow/commit/1fe1bb49c452b0318cad12ea9d97c3bef188e9a7"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "Pillow",
+      "version": "8.2.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-98vv-pw6r-q6q4",
+      "cve_ids": [
+        "CVE-2021-23437"
+      ],
+      "summary": "Uncontrolled Resource Consumption in pillow",
+      "severity": "HIGH",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "published": "2021-09-07T23:08:10Z",
+      "modified": "2024-10-09T21:08:55.452380Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2021-23437",
+        "https://github.com/python-pillow/Pillow/commit/9e08eb8f78fdfd2f476e1b20b7cf38683754866b",
+        "https://github.com/advisories/GHSA-98vv-pw6r-q6q4"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "Pillow",
+      "version": "8.2.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-9j59-75qj-795w",
+      "cve_ids": [
+        "CVE-2022-24303"
+      ],
+      "summary": "Path traversal in Pillow",
+      "severity": "HIGH",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H",
+      "published": "2022-03-11T23:10:32Z",
+      "modified": "2024-10-14T18:43:28.549080Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2022-24303",
+        "https://github.com/python-pillow/Pillow/pull/3450",
+        "https://github.com/python-pillow/Pillow/pull/6010"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "Pillow",
+      "version": "8.2.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-j7hp-h8jx-5ppr",
+      "cve_ids": [
+        "CVE-2023-4863",
+        "CVE-2023-5129"
+      ],
+      "summary": "libwebp: OOB write in BuildHuffmanTable",
+      "severity": "HIGH",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "published": "2023-09-12T15:30:20Z",
+      "modified": "2026-02-04T03:35:53.856889Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2023-4863",
+        "https://github.com/qnighy/libwebp-sys2-rs/pull/21",
+        "https://github.com/python-pillow/Pillow/pull/7395"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "Pillow",
+      "version": "8.2.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-m2vv-5vj5-2hm7",
+      "cve_ids": [
+        "CVE-2022-45198"
+      ],
+      "summary": "Pillow vulnerable to Data Amplification attack.",
+      "severity": "HIGH",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "published": "2022-11-14T12:00:15Z",
+      "modified": "2024-10-14T18:39:06.000592Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2022-45198",
+        "https://github.com/python-pillow/Pillow/pull/6402",
+        "https://github.com/python-pillow/Pillow/pull/6402/commits/c9f1b35e981075110a23487a8d4a6cbb59a588ea"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "pyOpenSSL",
+      "version": "0.13",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-2rcm-phc9-3945",
+      "cve_ids": [
+        "CVE-2018-1000808"
+      ],
+      "summary": "Pyopenssl Incorrect Memory Management",
+      "severity": "HIGH",
+      "cvss": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "published": "2018-10-10T16:10:23Z",
+      "modified": "2024-10-21T21:26:43.686806Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2018-1000808",
+        "https://github.com/pyca/pyopenssl/pull/723",
+        "https://github.com/pyca/pyopenssl/commit/e73818600065821d588af475b024f4eb518c3509"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "pyOpenSSL",
+      "version": "0.13",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-6748-36qp-fx6r",
+      "cve_ids": [
+        "CVE-2013-4314"
+      ],
+      "summary": "PyOpenSSL Mishandles NUL Byte In Certificate Subject Alternative Name",
+      "severity": "HIGH",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+      "published": "2022-05-17T04:56:46Z",
+      "modified": "2024-10-24T22:06:51.043867Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2013-4314",
+        "https://github.com/pyca/pyopenssl/commit/6bbf44a00b35fb28df1f66aa194b2fe95eab1ab2",
+        "https://bugzilla.redhat.com/show_bug.cgi?id=1005325"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "pyOpenSSL",
+      "version": "0.13",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-p28m-34f6-967q",
+      "cve_ids": [
+        "CVE-2018-1000807"
+      ],
+      "summary": "PyOpenSSL Use-After-Free vulnerability",
+      "severity": "HIGH",
+      "cvss": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "published": "2018-10-10T16:10:38Z",
+      "modified": "2024-10-15T16:39:23.634847Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2018-1000807",
+        "https://github.com/pyca/pyopenssl/pull/723",
+        "https://github.com/pyca/pyopenssl/commit/e73818600065821d588af475b024f4eb518c3509"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "setuptools",
+      "version": "19.2",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-5rjg-fvgr-3xxf",
+      "cve_ids": [
+        "CVE-2025-47273"
+      ],
+      "summary": "setuptools has a path traversal vulnerability in PackageIndex.download that leads to Arbitrary File Write",
+      "severity": "HIGH",
+      "cvss": null,
+      "published": "2025-05-19T16:52:43Z",
+      "modified": "2026-05-11T00:26:34.671259971Z",
+      "references": [
+        "https://github.com/pypa/setuptools/security/advisories/GHSA-5rjg-fvgr-3xxf",
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-47273",
+        "https://github.com/pypa/setuptools/issues/4946"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "setuptools",
+      "version": "19.2",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-cx63-2mw6-8hw5",
+      "cve_ids": [
+        "CVE-2024-6345"
+      ],
+      "summary": "setuptools vulnerable to Command Injection via package URL",
+      "severity": "HIGH",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "published": "2024-07-15T03:30:57Z",
+      "modified": "2026-02-04T03:54:02.259111Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-6345",
+        "https://github.com/pypa/setuptools/pull/4332",
+        "https://github.com/pypa/setuptools/commit/88807c7062788254f654ea8c03427adc859321f0"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "setuptools",
+      "version": "19.2",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-r9hx-vwmv-q579",
+      "cve_ids": [
+        "CVE-2022-40897"
+      ],
+      "summary": "pypa/setuptools vulnerable to Regular Expression Denial of Service (ReDoS)",
+      "severity": "HIGH",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "published": "2022-12-23T00:30:23Z",
+      "modified": "2026-02-04T03:03:25.892107Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2022-40897",
+        "https://github.com/pypa/setuptools/issues/3659",
+        "https://github.com/pypa/setuptools/commit/43a9c9bfa6aa626ec2a22540bea28d2ca77964be"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "Werkzeug",
+      "version": "0.11.10",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-2g68-c3qc-8985",
+      "cve_ids": [
+        "CVE-2024-34069"
+      ],
+      "summary": "Werkzeug debugger vulnerable to remote execution when interacting with attacker controlled domain",
+      "severity": "HIGH",
+      "cvss": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "published": "2024-05-06T14:21:27Z",
+      "modified": "2026-02-04T04:19:36.666836Z",
+      "references": [
+        "https://github.com/pallets/werkzeug/security/advisories/GHSA-2g68-c3qc-8985",
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-34069",
+        "https://github.com/pallets/werkzeug/commit/3386395b24c7371db11a5b8eaac0c91da5362692"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "Werkzeug",
+      "version": "0.11.10",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-gq9m-qvpx-68hc",
+      "cve_ids": [
+        "CVE-2019-14806"
+      ],
+      "summary": "Pallets Werkzeug Insufficient Entropy",
+      "severity": "HIGH",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "published": "2019-08-21T16:15:24Z",
+      "modified": "2024-11-19T18:22:43.515928Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2019-14806",
+        "https://github.com/pallets/werkzeug/commit/00bc43b1672e662e5e3b8cecd79e67fc968fa246",
+        "https://github.com/pallets/werkzeug"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "Werkzeug",
+      "version": "0.11.10",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-j544-7q9p-6xp8",
+      "cve_ids": [
+        "CVE-2019-14322"
+      ],
+      "summary": "Pallets Werkzeug vulnerable to Path Traversal",
+      "severity": "HIGH",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "published": "2022-05-24T16:51:33Z",
+      "modified": "2024-02-19T05:23:41.658817Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2019-14322",
+        "https://github.com/pallets/werkzeug",
+        "https://palletsprojects.com/blog/werkzeug-0-15-5-released"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "Werkzeug",
+      "version": "0.11.10",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-xg9f-g7g7-2323",
+      "cve_ids": [
+        "CVE-2023-25577"
+      ],
+      "summary": "High resource usage when parsing multipart form data with many fields",
+      "severity": "HIGH",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "published": "2023-02-15T15:36:26Z",
+      "modified": "2026-02-04T03:57:31.773504Z",
+      "references": [
+        "https://github.com/pallets/werkzeug/security/advisories/GHSA-xg9f-g7g7-2323",
+        "https://nvd.nist.gov/vuln/detail/CVE-2023-25577",
+        "https://github.com/pallets/werkzeug/commit/517cac5a804e8c4dc4ed038bb20dacd038e7a9f1"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "Django",
+      "version": "2.1.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-337x-4q8g-prc5",
+      "cve_ids": [
+        "CVE-2019-3498"
+      ],
+      "summary": "Improper Input Validation in Django",
+      "severity": "HIGH",
+      "cvss": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N",
+      "published": "2019-01-14T16:20:05Z",
+      "modified": "2024-11-19T05:23:16.091248Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2019-3498",
+        "https://docs.djangoproject.com/en/dev/releases/security",
+        "https://github.com/advisories/GHSA-337x-4q8g-prc5"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "Django",
+      "version": "2.1.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-6w2r-r2m5-xq5w",
+      "cve_ids": [
+        "CVE-2025-57833"
+      ],
+      "summary": "Django is subject to SQL injection through its column aliases",
+      "severity": "HIGH",
+      "cvss": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:L/A:N",
+      "published": "2025-09-08T18:31:31Z",
+      "modified": "2026-06-05T14:45:50.840275748Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-57833",
+        "https://github.com/django/django/commit/102965ea93072fe3c39a30be437c683ec1106ef5",
+        "https://github.com/django/django/commit/31334e6965ad136a5e369993b01721499c5d1a92"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "Django",
+      "version": "2.1.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-8x94-hmjh-97hq",
+      "cve_ids": [
+        "CVE-2022-36359"
+      ],
+      "summary": "Django vulnerable to Reflected File Download attack",
+      "severity": "HIGH",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "published": "2022-08-11T14:49:12Z",
+      "modified": "2026-02-04T02:45:55.690257Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2022-36359",
+        "https://github.com/django/django/commit/b3e4494d759202a3b6bf247fd34455bf13be5b80",
+        "https://github.com/django/django/commit/b7d9529cbe0af4adabb6ea5d01ed8dcce3668fb3"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "Django",
+      "version": "2.1.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-c4qh-4vgv-qc6g",
+      "cve_ids": [
+        "CVE-2019-14232"
+      ],
+      "summary": "Django Denial-of-service in django.utils.text.Truncator",
+      "severity": "HIGH",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "published": "2019-08-06T01:43:29Z",
+      "modified": "2024-09-20T16:24:57.221275Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2019-14232",
+        "https://www.openwall.com/lists/oss-security/2023/10/04/6",
+        "https://www.djangoproject.com/weblog/2019/aug/01/security-releases"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "Django",
+      "version": "2.1.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-h5jv-4p7w-64jg",
+      "cve_ids": [
+        "CVE-2019-14233"
+      ],
+      "summary": "Django Denial-of-service in strip_tags()",
+      "severity": "HIGH",
+      "cvss": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "published": "2019-08-06T01:43:33Z",
+      "modified": "2024-09-20T16:35:22.320310Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2019-14233",
+        "https://docs.djangoproject.com/en/dev/releases/security",
+        "https://github.com/advisories/GHSA-h5jv-4p7w-64jg"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "Django",
+      "version": "2.1.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-hvmf-r92r-27hr",
+      "cve_ids": [
+        "CVE-2019-19118"
+      ],
+      "summary": "Django allows unintended model editing",
+      "severity": "HIGH",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+      "published": "2019-12-04T21:26:28Z",
+      "modified": "2024-11-19T05:33:19.050183Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2019-19118",
+        "https://github.com/django/django/commit/103ebe2b5ff1b2614b85a52c239f471904d26244",
+        "https://github.com/django/django/commit/36f580a17f0b3cb087deadf3b65eea024f479c21"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "Django",
+      "version": "2.1.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-qw25-v68c-qjf3",
+      "cve_ids": [
+        "CVE-2025-64458"
+      ],
+      "summary": "Django has a denial-of-service vulnerability in HttpResponseRedirect and HttpResponsePermanentRedirect on Windows",
+      "severity": "HIGH",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "published": "2025-11-05T15:31:07Z",
+      "modified": "2026-06-05T14:45:50.558008837Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-64458",
+        "https://github.com/django/django/commit/3790593781d26168e7306b5b2f8ea0309de16242",
+        "https://github.com/django/django/commit/4f5d904b63751dea9ffc3b0e046404a7fa5881ac"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "Django",
+      "version": "2.1.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-v9qg-3j8p-r63v",
+      "cve_ids": [
+        "CVE-2019-14235"
+      ],
+      "summary": "Uncontrolled Recursion in Django",
+      "severity": "HIGH",
+      "cvss": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "published": "2019-08-06T01:43:31Z",
+      "modified": "2024-09-20T16:35:02.132194Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2019-14235",
+        "https://docs.djangoproject.com/en/dev/releases/security",
+        "https://github.com/advisories/GHSA-v9qg-3j8p-r63v"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "Django",
+      "version": "2.1.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-wh4h-v3f2-r2pp",
+      "cve_ids": [
+        "CVE-2019-6975"
+      ],
+      "summary": "Uncontrolled Memory Consumption in Django",
+      "severity": "HIGH",
+      "cvss": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "published": "2019-02-12T15:36:37Z",
+      "modified": "2025-02-21T05:27:55.519642Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2019-6975",
+        "https://github.com/django/django/commit/0bbb560183fabf0533289700845dafa94951f227",
+        "https://github.com/django/django/commit/1f42f82566c9d2d73aff1c42790d6b1b243f7676"
+      ],
+      "fail_build": true
+    },
+    {
+      "package": "paramiko",
+      "version": "2.4.1",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-r374-rxx8-8654",
+      "cve_ids": [
+        "CVE-2026-44405"
+      ],
+      "summary": "Paramiko rsakey.py allows the SHA-1 algorithm",
+      "severity": "LOW",
+      "cvss": "CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:C/C:N/I:L/A:N",
+      "published": "2026-05-06T00:31:33Z",
+      "modified": "2026-05-09T23:44:18.416870028Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-44405",
+        "https://github.com/paramiko/paramiko/commit/a4489456b6f65281e172380cc4826cee5e851dbb",
+        "https://github.com/paramiko/paramiko"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "cryptography",
+      "version": "2.6.1",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-5cpq-8wj7-hf2v",
+      "cve_ids": [],
+      "summary": "Vulnerable OpenSSL included in cryptography wheels",
+      "severity": "LOW",
+      "cvss": null,
+      "published": "2023-06-02T17:13:10Z",
+      "modified": "2026-02-04T02:57:14.653935Z",
+      "references": [
+        "https://github.com/pyca/cryptography/security/advisories/GHSA-5cpq-8wj7-hf2v",
+        "https://github.com/pyca/cryptography/commit/8708245ccdeaff21d65eea68a4f8d2a7c5949a22",
+        "https://cryptography.io/en/latest/changelog/#v41-0-0"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "cryptography",
+      "version": "2.6.1",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-jm77-qphf-c4w8",
+      "cve_ids": [],
+      "summary": "pyca/cryptography's wheels include vulnerable OpenSSL",
+      "severity": "LOW",
+      "cvss": null,
+      "published": "2023-08-01T22:34:41Z",
+      "modified": "2026-02-04T04:40:22.560238Z",
+      "references": [
+        "https://github.com/pyca/cryptography/security/advisories/GHSA-jm77-qphf-c4w8",
+        "https://github.com/pyca/cryptography/commit/b22271cf3c3dd8dc8978f8f4b00b5c7060b6538d",
+        "https://github.com/pyca/cryptography/commit/bfa4d95f0f356f2d535efd5c775e0fb3efe90ef2"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "cryptography",
+      "version": "2.6.1",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-m959-cc7f-wv43",
+      "cve_ids": [
+        "CVE-2026-34073"
+      ],
+      "summary": "cryptography has incomplete DNS name constraint enforcement on peer names",
+      "severity": "LOW",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+      "published": "2026-03-27T19:56:21Z",
+      "modified": "2026-06-05T18:00:13.915417385Z",
+      "references": [
+        "https://github.com/pyca/cryptography/security/advisories/GHSA-m959-cc7f-wv43",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-34073",
+        "https://github.com/pyca/cryptography"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "cryptography",
+      "version": "2.6.1",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-v8gr-m533-ghj9",
+      "cve_ids": [],
+      "summary": "Vulnerable OpenSSL included in cryptography wheels",
+      "severity": "LOW",
+      "cvss": null,
+      "published": "2023-09-21T17:07:01Z",
+      "modified": "2026-02-04T04:40:35.677396Z",
+      "references": [
+        "https://github.com/pyca/cryptography/security/advisories/GHSA-v8gr-m533-ghj9",
+        "https://github.com/pyca/cryptography/commit/fc11bce6930e591ce26a2317b31b9ce2b3e25512",
+        "https://github.com/pyca/cryptography"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "flask",
+      "version": "0.12.2",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-68rp-wp8r-4726",
+      "cve_ids": [
+        "CVE-2026-27205"
+      ],
+      "summary": "Flask session does not add `Vary: Cookie` header when accessed in some ways",
+      "severity": "LOW",
+      "cvss": null,
+      "published": "2026-02-19T20:45:41Z",
+      "modified": "2026-02-23T23:43:45.778179Z",
+      "references": [
+        "https://github.com/pallets/flask/security/advisories/GHSA-68rp-wp8r-4726",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-27205",
+        "https://github.com/pallets/flask/commit/089cb86dd22bff589a4eafb7ab8e42dc357623b4"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "Pillow",
+      "version": "8.2.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-4fx9-vc88-q2xc",
+      "cve_ids": [],
+      "summary": "Infinite loop in Pillow",
+      "severity": "LOW",
+      "cvss": null,
+      "published": "2022-03-11T23:39:27Z",
+      "modified": "2024-12-05T05:35:12.297192Z",
+      "references": [
+        "https://github.com/python-pillow/Pillow/commit/baae9ec4b67c68e3adaf1208cf54e8de5e38a6fd",
+        "https://github.com/python-pillow/Pillow",
+        "https://pillow.readthedocs.io/en/stable/releasenotes/9.0.0.html#ensure-jpegimageplugin-stops-at-the-end-of-a-truncated-file"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "Werkzeug",
+      "version": "0.11.10",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-px8h-6qxv-m22q",
+      "cve_ids": [
+        "CVE-2023-23934"
+      ],
+      "summary": "Incorrect parsing of nameless cookies leads to __Host- cookies bypass",
+      "severity": "LOW",
+      "cvss": "CVSS:3.1/AV:A/AC:H/PR:N/UI:R/S:U/C:N/I:L/A:N",
+      "published": "2023-02-15T15:37:03Z",
+      "modified": "2026-02-04T02:50:59.290989Z",
+      "references": [
+        "https://github.com/pallets/werkzeug/security/advisories/GHSA-px8h-6qxv-m22q",
+        "https://nvd.nist.gov/vuln/detail/CVE-2023-23934",
+        "https://github.com/pallets/werkzeug/commit/cf275f42acad1b5950c50ffe8ef58fe62cdce028"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "paramiko",
+      "version": "2.4.1",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2022-166",
+      "cve_ids": [
+        "CVE-2022-24302"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2022-03-17T22:15:00Z",
+      "modified": "2023-11-08T04:08:30.555889Z",
+      "references": [
+        "https://www.paramiko.org/changelog.html",
+        "https://github.com/paramiko/paramiko/blob/363a28d94cada17f012c1604a3c99c71a2bda003/paramiko/pkey.py#L546",
+        "https://github.com/advisories/GHSA-f8q4-jwww-x3wv"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "requests",
+      "version": "2.18.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2018-28",
+      "cve_ids": [
+        "CVE-2018-18074"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2018-10-09T17:29:00Z",
+      "modified": "2023-11-08T04:00:04.815794Z",
+      "references": [
+        "https://github.com/requests/requests/pull/4718",
+        "https://github.com/requests/requests/issues/4716",
+        "https://github.com/requests/requests/commit/c45d7c49ea75133e52ab22a8e9e13173938e36ff"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "requests",
+      "version": "2.18.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2023-74",
+      "cve_ids": [
+        "CVE-2023-32681"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2023-05-26T18:15:00Z",
+      "modified": "2023-11-08T04:12:35.436175Z",
+      "references": [
+        "https://github.com/psf/requests/security/advisories/GHSA-j8r2-6x86-q33q",
+        "https://github.com/psf/requests/releases/tag/v2.31.0",
+        "https://github.com/psf/requests/commit/74ea7cf7a6a27a4eeb2ae24e162bcc942a6706d5"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "jinja2",
+      "version": "2.10",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2019-217",
+      "cve_ids": [
+        "CVE-2019-10906"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2019-04-07T00:29:00Z",
+      "modified": "2023-11-08T04:00:58.644982Z",
+      "references": [
+        "https://palletsprojects.com/blog/jinja-2-10-1-released",
+        "https://lists.apache.org/thread.html/b2380d147b508bbcb90d2cad443c159e63e12555966ab4f320ee22da@%3Ccommits.airflow.apache.org%3E",
+        "https://lists.apache.org/thread.html/46c055e173b52d599c648a98199972dbd6a89d2b4c4647b0500f2284@%3Cdevnull.infra.apache.org%3E"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "jinja2",
+      "version": "2.10",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2021-66",
+      "cve_ids": [
+        "CVE-2020-28493"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2021-02-01T20:15:00Z",
+      "modified": "2023-11-08T04:03:28.543308Z",
+      "references": [
+        "https://github.com/pallets/jinja/blob/ab81fd9c277900c85da0c322a2ff9d68a235b2e6/src/jinja2/utils.py%23L20",
+        "https://github.com/pallets/jinja/pull/1343",
+        "https://snyk.io/vuln/SNYK-PYTHON-JINJA2-1012994"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "PyYAML",
+      "version": "5.1",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2020-176",
+      "cve_ids": [
+        "CVE-2019-20477"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2020-02-19T04:15:00Z",
+      "modified": "2023-11-08T04:01:30.627114Z",
+      "references": [
+        "https://www.exploit-db.com/download/47655",
+        "https://github.com/yaml/pyyaml/blob/master/CHANGES",
+        "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/52N5XS73Z5S4ZN7I7R56ICCPCTKCUV4H/"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "PyYAML",
+      "version": "5.1",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2020-96",
+      "cve_ids": [
+        "CVE-2020-1747"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2020-03-24T15:15:00Z",
+      "modified": "2026-05-04T08:57:14.897560893Z",
+      "references": [
+        "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2020-1747",
+        "https://github.com/yaml/pyyaml/pull/386",
+        "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/WORRFHPQVAFKKXXWLSSW6XKUYLWM6CSH/"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "PyYAML",
+      "version": "5.1",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2021-142",
+      "cve_ids": [
+        "CVE-2020-14343"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2021-02-09T21:15:00Z",
+      "modified": "2023-11-08T04:02:26.414885Z",
+      "references": [
+        "https://bugzilla.redhat.com/show_bug.cgi?id=1860466",
+        "https://github.com/advisories/GHSA-8q59-q68h-6hv4"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "lxml",
+      "version": "4.1.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2018-12",
+      "cve_ids": [
+        "CVE-2018-19787"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2018-12-02T10:29:00Z",
+      "modified": "2023-11-08T04:00:08.560552Z",
+      "references": [
+        "https://github.com/lxml/lxml/commit/6be1d081b49c97cfd7b3fbd934a193b668629109",
+        "https://lists.debian.org/debian-lts-announce/2018/12/msg00001.html",
+        "https://usn.ubuntu.com/3841-2/"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "lxml",
+      "version": "4.1.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2020-62",
+      "cve_ids": [
+        "CVE-2020-27783"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2020-12-03T17:15:00Z",
+      "modified": "2023-11-08T04:03:22.239924Z",
+      "references": [
+        "https://bugzilla.redhat.com/show_bug.cgi?id=1901633",
+        "https://www.debian.org/security/2020/dsa-4810",
+        "https://lists.debian.org/debian-lts-announce/2020/12/msg00028.html"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "lxml",
+      "version": "4.1.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2021-19",
+      "cve_ids": [
+        "CVE-2021-28957"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2021-03-21T05:15:00Z",
+      "modified": "2023-11-08T04:05:32.182293Z",
+      "references": [
+        "https://bugs.launchpad.net/lxml/+bug/1888153",
+        "https://github.com/lxml/lxml/pull/316/commits/10ec1b4e9f93713513a3264ed6158af22492f270",
+        "https://lists.debian.org/debian-lts-announce/2021/03/msg00031.html"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "lxml",
+      "version": "4.1.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2021-852",
+      "cve_ids": [
+        "CVE-2021-43818"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2021-12-13T18:15:00Z",
+      "modified": "2026-04-09T18:24:01.261452Z",
+      "references": [
+        "https://github.com/lxml/lxml/commit/f2330237440df7e8f39c3ad1b1aa8852be3b27c0",
+        "https://github.com/lxml/lxml/commit/a3eacbc0dcf1de1c822ec29fb7d090a4b1712a9c#diff-59130575b4fb2932c957db2922977d7d89afb0b2085357db1a14615a2fcad776",
+        "https://github.com/lxml/lxml/security/advisories/GHSA-55x5-fj6c-h6m8"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "lxml",
+      "version": "4.1.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2022-230",
+      "cve_ids": [
+        "CVE-2022-2309"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2022-07-05T10:15:00Z",
+      "modified": "2023-11-08T04:08:16.338038Z",
+      "references": [
+        "https://huntr.dev/bounties/8264e74f-edda-4c40-9956-49de635105ba",
+        "https://github.com/lxml/lxml/commit/86368e9cf70a0ad23cccd5ee32de847149af0c6f",
+        "https://github.com/advisories/GHSA-wrxv-2j5q-m38w"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "lxml",
+      "version": "4.1.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2026-87",
+      "cve_ids": [
+        "CVE-2026-41066"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "published": "2026-04-24T17:16:20.933Z",
+      "modified": "2026-05-20T09:19:06.179641Z",
+      "references": [
+        "https://github.com/lxml/lxml/security/advisories/GHSA-vfmq-68hx-4jfw",
+        "https://bugs.launchpad.net/lxml/+bug/2146291"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "cryptography",
+      "version": "2.6.1",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2021-62",
+      "cve_ids": [
+        "CVE-2020-25659"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2021-01-11T16:15:00Z",
+      "modified": "2023-11-08T04:03:11.264590Z",
+      "references": [
+        "https://github.com/pyca/cryptography/pull/5507/commits/ce1bef6f1ee06ac497ca0c837fbd1c7ef6c2472b",
+        "https://github.com/advisories/GHSA-hggm-jpg3-v476"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "cryptography",
+      "version": "2.6.1",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2023-11",
+      "cve_ids": [
+        "CVE-2023-23931"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2023-02-07T21:15:00Z",
+      "modified": "2026-02-22T22:48:42.243064Z",
+      "references": [
+        "https://github.com/pyca/cryptography/security/advisories/GHSA-w7pp-m8wf-vj6r",
+        "https://github.com/pyca/cryptography/security/advisories/GHSA-w7pp-m8wf-vj6r",
+        "https://github.com/pyca/cryptography/pull/8230/commits/94a50a9731f35405f0357fa5f3b177d46a726ab3"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "cryptography",
+      "version": "2.6.1",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2026-35",
+      "cve_ids": [
+        "CVE-2026-34073"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+      "published": "2026-03-31T03:15:59.123Z",
+      "modified": "2026-05-20T09:18:55.884138Z",
+      "references": [
+        "https://github.com/pyca/cryptography/security/advisories/GHSA-m959-cc7f-wv43"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "urllib3",
+      "version": "1.24.1",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2019-132",
+      "cve_ids": [
+        "CVE-2019-11236"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2019-04-15T15:29:00Z",
+      "modified": "2023-11-08T04:01:00.047784Z",
+      "references": [
+        "https://github.com/urllib3/urllib3/issues/1553",
+        "https://usn.ubuntu.com/3990-1/",
+        "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/TBI45HO533KYHNB5YRO43TBYKA3E3VRL/"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "urllib3",
+      "version": "1.24.1",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2019-133",
+      "cve_ids": [
+        "CVE-2019-11324"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2019-04-18T21:29:00Z",
+      "modified": "2023-11-08T04:01:00.967964Z",
+      "references": [
+        "https://github.com/urllib3/urllib3/compare/a6ec68a...1efadf4",
+        "http://www.openwall.com/lists/oss-security/2019/04/19/1",
+        "https://usn.ubuntu.com/3990-1/"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "urllib3",
+      "version": "1.24.1",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2020-148",
+      "cve_ids": [
+        "CVE-2020-26137"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2020-09-30T18:15:00Z",
+      "modified": "2023-11-08T04:03:14.251187Z",
+      "references": [
+        "https://bugs.python.org/issue39603",
+        "https://github.com/urllib3/urllib3/commit/1dd69c5c5982fae7c87a620d487c2ebf7a6b436b",
+        "https://github.com/urllib3/urllib3/pull/1800"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "urllib3",
+      "version": "1.24.1",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2021-108",
+      "cve_ids": [
+        "CVE-2021-33503"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2021-06-29T11:15:00Z",
+      "modified": "2023-11-08T04:06:04.829992Z",
+      "references": [
+        "https://github.com/advisories/GHSA-q2q7-5pp4-w6pg",
+        "https://github.com/urllib3/urllib3/commit/2d4a3fee6de2fa45eb82169361918f759269b4ec"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "urllib3",
+      "version": "1.24.1",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2023-192",
+      "cve_ids": [
+        "CVE-2023-43804"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+      "published": "2023-10-04T17:15:00Z",
+      "modified": "2023-11-08T04:13:33.452167Z",
+      "references": [
+        "https://github.com/urllib3/urllib3/commit/644124ecd0b6e417c527191f866daa05a5a2056d",
+        "https://github.com/urllib3/urllib3/security/advisories/GHSA-v845-jxx5-vc9f",
+        "https://github.com/urllib3/urllib3/commit/01220354d389cd05474713f8c982d05c9b17aafb"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "urllib3",
+      "version": "1.24.1",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2023-207",
+      "cve_ids": [
+        "CVE-2018-25091"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+      "published": "2023-10-15T19:15:00Z",
+      "modified": "2023-11-08T04:00:16.446075Z",
+      "references": [
+        "https://github.com/urllib3/urllib3/compare/1.24.1...1.24.2",
+        "https://github.com/urllib3/urllib3/issues/1510",
+        "https://github.com/urllib3/urllib3/commit/adb358f8e06865406d1f05e581a16cbea2136fbc"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "urllib3",
+      "version": "1.24.1",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2023-212",
+      "cve_ids": [
+        "CVE-2023-45803"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": "CVSS:3.1/AV:A/AC:H/PR:H/UI:N/S:U/C:H/I:N/A:N",
+      "published": "2023-10-17T20:15:00Z",
+      "modified": "2023-11-08T04:13:39.165450Z",
+      "references": [
+        "https://github.com/urllib3/urllib3/security/advisories/GHSA-g4mx-q9vg-27p4",
+        "https://www.rfc-editor.org/rfc/rfc9110.html#name-get",
+        "https://github.com/urllib3/urllib3/commit/4e98d57809dacab1cbe625fddeec1a290c478ea9"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "urllib3",
+      "version": "1.24.1",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2026-141",
+      "cve_ids": [
+        "CVE-2026-44431"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+      "published": "2026-05-13T16:16:57.150Z",
+      "modified": "2026-05-20T09:19:20.983812Z",
+      "references": [
+        "https://github.com/urllib3/urllib3/security/advisories/GHSA-qccp-gfcp-xxvc"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "flask",
+      "version": "0.12.2",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2018-66",
+      "cve_ids": [
+        "CVE-2018-1000656"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2018-08-20T19:31:00Z",
+      "modified": "2023-11-08T03:59:39.887416Z",
+      "references": [
+        "https://github.com/pallets/flask/releases/tag/0.12.3",
+        "https://github.com/pallets/flask/pull/2691",
+        "https://security.netapp.com/advisory/ntap-20190221-0001/"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "flask",
+      "version": "0.12.2",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2019-179",
+      "cve_ids": [
+        "CVE-2019-1010083"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2019-07-17T14:15:00Z",
+      "modified": "2023-11-08T04:00:40.602062Z",
+      "references": [
+        "https://www.palletsprojects.com/blog/flask-1-0-released/",
+        "https://github.com/advisories/GHSA-5wv5-4vpf-pj6m"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "flask",
+      "version": "0.12.2",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2023-62",
+      "cve_ids": [
+        "CVE-2023-30861"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2023-05-02T18:15:00Z",
+      "modified": "2023-11-08T04:12:28.231927Z",
+      "references": [
+        "https://github.com/pallets/flask/commit/70f906c51ce49c485f1d355703e9cc3386b1cc2b",
+        "https://github.com/pallets/flask/releases/tag/2.3.2",
+        "https://github.com/pallets/flask/releases/tag/2.2.5"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "httplib2",
+      "version": "0.9.2",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2020-46",
+      "cve_ids": [
+        "CVE-2020-11078"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2020-05-20T16:15:00Z",
+      "modified": "2023-11-08T04:02:05.060564Z",
+      "references": [
+        "https://github.com/httplib2/httplib2/commit/a1457cc31f3206cf691d11d2bf34e98865873e9e",
+        "https://github.com/httplib2/httplib2/security/advisories/GHSA-gg84-qgv9-w4pq",
+        "https://lists.apache.org/thread.html/rc9eff9572946142b657c900fe63ea4bbd3535911e8d4ce4d08fe4b89@%3Ccommits.allura.apache.org%3E"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "httplib2",
+      "version": "0.9.2",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2021-16",
+      "cve_ids": [
+        "CVE-2021-21240"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2021-02-08T20:15:00Z",
+      "modified": "2023-11-08T04:04:39.189613Z",
+      "references": [
+        "https://github.com/httplib2/httplib2/commit/bd9ee252c8f099608019709e22c0d705e98d26bc",
+        "https://github.com/httplib2/httplib2/pull/182",
+        "https://github.com/httplib2/httplib2/security/advisories/GHSA-93xj-8mrv-444m"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "py",
+      "version": "1.11.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2022-42969",
+      "cve_ids": [
+        "CVE-2022-42969"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2022-11-04T11:00:00Z",
+      "modified": "2026-05-19T05:26:04.235599731Z",
+      "references": [
+        "https://github.com/advisories/GHSA-w596-4wvx-j9j6",
+        "https://nvd.nist.gov/vuln/detail/CVE-2022-42969",
+        "https://github.com/pytest-dev/py/issues/287"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "bleach",
+      "version": "2.1.3",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2020-27",
+      "cve_ids": [
+        "CVE-2020-6802"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2020-03-24T22:15:00Z",
+      "modified": "2023-11-08T04:03:57.056470Z",
+      "references": [
+        "https://github.com/mozilla/bleach/security/advisories/GHSA-q65m-pv3f-wr5r",
+        "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/OCNLM2MGQTOLCIVVYS2Z5S7KOQJR5JC4/",
+        "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/72R4VFFHDRSQMNT7IZU3X2755ZP4HGNI/"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "bleach",
+      "version": "2.1.3",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2020-28",
+      "cve_ids": [
+        "CVE-2020-6816"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2020-03-24T22:15:00Z",
+      "modified": "2023-11-08T04:03:57.116894Z",
+      "references": [
+        "https://github.com/mozilla/bleach/security/advisories/GHSA-m6xf-fq7q-8743",
+        "https://www.checkmarx.com/blog/vulnerabilities-discovered-in-mozilla-bleach",
+        "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/EDQU2SZLZMSSACCBUBJ6NOSRNNBDYFW5/"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "bleach",
+      "version": "2.1.3",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2020-340",
+      "cve_ids": [
+        "CVE-2020-6817"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2020-03-30T19:45:00Z",
+      "modified": "2023-11-08T04:03:57.176645Z",
+      "references": [
+        "https://github.com/mozilla/bleach/security/advisories/GHSA-vqhp-cxgc-6wmm",
+        "https://blog.r2c.dev/posts/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/",
+        "https://bugzilla.mozilla.org/show_bug.cgi?id=1623633"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "bleach",
+      "version": "2.1.3",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2021-865",
+      "cve_ids": [
+        "CVE-2021-23980"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2021-02-02T17:58:00Z",
+      "modified": "2023-11-08T04:05:14.166540Z",
+      "references": [
+        "https://github.com/mozilla/bleach/security/advisories/GHSA-vv2x-vrpj-qqpq",
+        "https://advisory.checkmarx.net/advisory/CX-2021-4303",
+        "ttps://bugzilla.mozilla.org/show_bug.cgi?id=1689399"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "Pillow",
+      "version": "8.2.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2021-317",
+      "cve_ids": [
+        "CVE-2021-23437"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2021-09-03T16:15:00Z",
+      "modified": "2023-12-06T01:00:56.992827Z",
+      "references": [
+        "https://pillow.readthedocs.io/en/stable/releasenotes/8.3.2.html",
+        "https://github.com/python-pillow/Pillow/commit/9e08eb8f78fdfd2f476e1b20b7cf38683754866b",
+        "https://snyk.io/vuln/SNYK-PYTHON-PILLOW-1319443"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "Pillow",
+      "version": "8.2.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2021-331",
+      "cve_ids": [
+        "CVE-2021-34552"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2021-07-13T17:15:00Z",
+      "modified": "2023-12-06T01:01:17.659994Z",
+      "references": [
+        "https://pillow.readthedocs.io/en/stable/releasenotes/index.html",
+        "https://pillow.readthedocs.io/en/stable/releasenotes/8.3.0.html#buffer-overflow",
+        "https://lists.debian.org/debian-lts-announce/2021/07/msg00018.html"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "Pillow",
+      "version": "8.2.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2022-10",
+      "cve_ids": [
+        "CVE-2022-22817"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2022-01-10T14:12:00Z",
+      "modified": "2023-12-06T01:01:58.166055Z",
+      "references": [
+        "https://pillow.readthedocs.io/en/stable/releasenotes/9.0.0.html#restrict-builtins-available-to-imagemath-eval",
+        "https://lists.debian.org/debian-lts-announce/2022/01/msg00018.html",
+        "https://github.com/advisories/GHSA-8vj2-vxx3-667w"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "Pillow",
+      "version": "8.2.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2022-168",
+      "cve_ids": [
+        "CVE-2022-24303"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2022-03-28T02:15:00Z",
+      "modified": "2023-12-06T01:02:03.848876Z",
+      "references": [
+        "https://pillow.readthedocs.io/en/stable/releasenotes/9.0.1.html#security",
+        "https://github.com/python-pillow/Pillow/pull/3450",
+        "https://github.com/advisories/GHSA-9j59-75qj-795w"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "Pillow",
+      "version": "8.2.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2022-42979",
+      "cve_ids": [
+        "CVE-2022-45198"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2022-11-14T07:15:00Z",
+      "modified": "2023-12-06T01:02:42.586226Z",
+      "references": [
+        "https://bugs.gentoo.org/855683",
+        "https://github.com/python-pillow/Pillow/commit/11918eac0628ec8ac0812670d9838361ead2d6a4",
+        "https://github.com/python-pillow/Pillow/pull/6402"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "Pillow",
+      "version": "8.2.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2022-8",
+      "cve_ids": [
+        "CVE-2022-22815"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2022-01-10T14:12:00Z",
+      "modified": "2023-12-06T01:01:58.043772Z",
+      "references": [
+        "https://github.com/python-pillow/Pillow/blob/c5d9223a8b5e9295d15b5a9b1ef1dae44c8499f3/src/path.c#L331",
+        "https://pillow.readthedocs.io/en/stable/releasenotes/9.0.0.html#fixed-imagepath-path-array-handling",
+        "https://lists.debian.org/debian-lts-announce/2022/01/msg00018.html"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "Pillow",
+      "version": "8.2.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2022-9",
+      "cve_ids": [
+        "CVE-2022-22816"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2022-01-10T14:12:00Z",
+      "modified": "2023-12-06T01:01:58.105368Z",
+      "references": [
+        "https://github.com/python-pillow/Pillow/blob/c5d9223a8b5e9295d15b5a9b1ef1dae44c8499f3/src/path.c#L331",
+        "https://pillow.readthedocs.io/en/stable/releasenotes/9.0.0.html#fixed-imagepath-path-array-handling",
+        "https://lists.debian.org/debian-lts-announce/2022/01/msg00018.html"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "Pillow",
+      "version": "8.2.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2023-175",
+      "cve_ids": [],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2023-09-20T05:46:53.608652Z",
+      "modified": "2026-02-04T03:22:30.928037Z",
+      "references": [
+        "https://github.com/python-pillow/Pillow/blob/main/CHANGES.rst#1001-2023-09-15",
+        "https://nvd.nist.gov/vuln/detail/CVE-2023-5129",
+        "https://nvd.nist.gov/vuln/detail/CVE-2023-4863"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "Pillow",
+      "version": "8.2.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2023-227",
+      "cve_ids": [
+        "CVE-2023-44271"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2023-11-03T05:15:00Z",
+      "modified": "2023-11-10T08:11:29.510057Z",
+      "references": [
+        "https://devhub.checkmarx.com/cve-details/CVE-2023-44271/",
+        "https://github.com/python-pillow/Pillow/pull/7244",
+        "https://github.com/python-pillow/Pillow/commit/1fe1bb49c452b0318cad12ea9d97c3bef188e9a7"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "Pillow",
+      "version": "8.2.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2026-165",
+      "cve_ids": [
+        "CVE-2026-42308"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+      "published": "2026-05-09T06:16:09.793Z",
+      "modified": "2026-05-27T13:56:18.230226284Z",
+      "references": [
+        "https://github.com/python-pillow/Pillow/releases/tag/12.2.0",
+        "https://github.com/python-pillow/Pillow/security/advisories/GHSA-wjx4-4jcj-g98j"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "pyOpenSSL",
+      "version": "0.13",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2013-31",
+      "cve_ids": [
+        "CVE-2013-4314"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2013-09-30T21:55:00Z",
+      "modified": "2024-02-23T21:13:17.262767Z",
+      "references": [
+        "http://www.openwall.com/lists/oss-security/2013/09/06/2",
+        "https://mail.python.org/pipermail/pyopenssl-users/2013-September/000478.html",
+        "https://bugzilla.redhat.com/show_bug.cgi?id=1005325"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "pyOpenSSL",
+      "version": "0.13",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2018-23",
+      "cve_ids": [
+        "CVE-2018-1000807"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2018-10-08T15:29:00Z",
+      "modified": "2023-11-08T03:59:40.132715Z",
+      "references": [
+        "https://github.com/pyca/pyopenssl/pull/723",
+        "https://usn.ubuntu.com/3813-1/",
+        "https://access.redhat.com/errata/RHSA-2019:0085"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "pyOpenSSL",
+      "version": "0.13",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2018-24",
+      "cve_ids": [
+        "CVE-2018-1000808"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2018-10-08T15:29:00Z",
+      "modified": "2023-11-08T03:59:40.194341Z",
+      "references": [
+        "https://github.com/pyca/pyopenssl/pull/723",
+        "https://usn.ubuntu.com/3813-1/",
+        "https://access.redhat.com/errata/RHSA-2019:0085"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "setuptools",
+      "version": "19.2",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2022-43012",
+      "cve_ids": [
+        "CVE-2022-40897"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2022-12-23T00:15:00Z",
+      "modified": "2023-12-06T01:02:35.662444Z",
+      "references": [
+        "https://github.com/pypa/setuptools/blob/fe8a98e696241487ba6ac9f91faa38ade939ec5d/setuptools/package_index.py#L200",
+        "https://pyup.io/posts/pyup-discovers-redos-vulnerabilities-in-top-python-packages/",
+        "https://github.com/pypa/setuptools/compare/v65.5.0...v65.5.1"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "setuptools",
+      "version": "19.2",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2025-49",
+      "cve_ids": [
+        "CVE-2025-47273"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "published": "2025-05-17T16:15:19Z",
+      "modified": "2026-05-11T00:26:34.671259971Z",
+      "references": [
+        "https://github.com/pypa/setuptools/security/advisories/GHSA-5rjg-fvgr-3xxf",
+        "https://lists.debian.org/debian-lts-announce/2025/05/msg00035.html",
+        "https://github.com/pypa/setuptools/issues/4946"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "Werkzeug",
+      "version": "0.11.10",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2017-43",
+      "cve_ids": [
+        "CVE-2016-10516"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2017-10-23T16:29:00Z",
+      "modified": "2023-11-08T03:58:10.053222Z",
+      "references": [
+        "https://github.com/pallets/werkzeug/pull/1001",
+        "http://blog.neargle.com/2016/09/21/flask-src-review-get-a-xss-from-debuger/",
+        "https://lists.debian.org/debian-lts-announce/2017/11/msg00037.html"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "Werkzeug",
+      "version": "0.11.10",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2019-140",
+      "cve_ids": [
+        "CVE-2019-14806"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2019-08-09T15:15:00Z",
+      "modified": "2023-11-08T04:01:10.893476Z",
+      "references": [
+        "https://github.com/pallets/werkzeug/commit/00bc43b1672e662e5e3b8cecd79e67fc968fa246",
+        "https://github.com/pallets/werkzeug/blob/7fef41b120327d3912fbe12fb64f1951496fcf3e/src/werkzeug/debug/__init__.py#L168",
+        "https://palletsprojects.com/blog/werkzeug-0-15-3-released/"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "Werkzeug",
+      "version": "0.11.10",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2022-203",
+      "cve_ids": [
+        "CVE-2022-29361"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2022-05-25T01:15:00Z",
+      "modified": "2023-11-08T04:09:13.275498Z",
+      "references": [
+        "https://github.com/pallets/werkzeug/commit/9a3a981d70d2e9ec3344b5192f86fcaf3210cd85",
+        "https://github.com/pallets/werkzeug/issues/2420"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "Werkzeug",
+      "version": "0.11.10",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2023-221",
+      "cve_ids": [
+        "CVE-2023-46136"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "published": "2023-10-25T18:17:00Z",
+      "modified": "2023-11-08T18:38:34.170214Z",
+      "references": [
+        "https://github.com/pallets/werkzeug/commit/f3c803b3ade485a45f12b6d6617595350c0f03e2",
+        "https://github.com/pallets/werkzeug/security/advisories/GHSA-hrfv-mqp8-q5rw"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "Werkzeug",
+      "version": "0.11.10",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2023-57",
+      "cve_ids": [
+        "CVE-2023-23934"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2023-02-14T20:15:00Z",
+      "modified": "2023-11-08T04:11:43.091670Z",
+      "references": [
+        "https://github.com/pallets/werkzeug/security/advisories/GHSA-px8h-6qxv-m22q",
+        "https://github.com/pallets/werkzeug/commit/cf275f42acad1b5950c50ffe8ef58fe62cdce028",
+        "https://github.com/pallets/werkzeug/releases/tag/2.2.3"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "Werkzeug",
+      "version": "0.11.10",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2023-58",
+      "cve_ids": [
+        "CVE-2023-25577"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2023-02-14T20:15:00Z",
+      "modified": "2023-11-08T04:11:52.539843Z",
+      "references": [
+        "https://github.com/pallets/werkzeug/commit/517cac5a804e8c4dc4ed038bb20dacd038e7a9f1",
+        "https://github.com/pallets/werkzeug/releases/tag/2.2.3",
+        "https://github.com/pallets/werkzeug/security/advisories/GHSA-xg9f-g7g7-2323"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "Django",
+      "version": "2.1.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2018-3",
+      "cve_ids": [
+        "CVE-2018-16984"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2018-10-02T18:29:00Z",
+      "modified": "2023-11-08T04:00:02.548230Z",
+      "references": [
+        "https://www.djangoproject.com/weblog/2018/oct/01/security-release/",
+        "http://www.securitytracker.com/id/1041749",
+        "https://security.netapp.com/advisory/ntap-20190502-0009/"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "Django",
+      "version": "2.1.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2019-10",
+      "cve_ids": [
+        "CVE-2019-12781"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2019-07-01T14:15:00Z",
+      "modified": "2023-11-08T04:01:06.373410Z",
+      "references": [
+        "https://groups.google.com/forum/#!topic/django-announce/Is4kLY9ZcZQ",
+        "https://www.djangoproject.com/weblog/2019/jul/01/security-releases/",
+        "https://docs.djangoproject.com/en/dev/releases/security/"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "Django",
+      "version": "2.1.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2019-11",
+      "cve_ids": [
+        "CVE-2019-14232"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2019-08-02T15:15:00Z",
+      "modified": "2023-11-08T04:01:09.281488Z",
+      "references": [
+        "https://www.djangoproject.com/weblog/2019/aug/01/security-releases/",
+        "https://docs.djangoproject.com/en/dev/releases/security/",
+        "https://groups.google.com/forum/#!topic/django-announce/jIoju2-KLDs"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "Django",
+      "version": "2.1.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2019-12",
+      "cve_ids": [
+        "CVE-2019-14233"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2019-08-02T15:15:00Z",
+      "modified": "2023-11-08T04:01:09.343031Z",
+      "references": [
+        "https://www.djangoproject.com/weblog/2019/aug/01/security-releases/",
+        "https://docs.djangoproject.com/en/dev/releases/security/",
+        "https://groups.google.com/forum/#!topic/django-announce/jIoju2-KLDs"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "Django",
+      "version": "2.1.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2019-13",
+      "cve_ids": [
+        "CVE-2019-14234"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2019-08-09T13:15:00Z",
+      "modified": "2023-11-08T04:01:09.403667Z",
+      "references": [
+        "https://www.djangoproject.com/weblog/2019/aug/01/security-releases/",
+        "https://docs.djangoproject.com/en/dev/releases/security/",
+        "https://groups.google.com/forum/#!topic/django-announce/jIoju2-KLDs"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "Django",
+      "version": "2.1.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2019-14",
+      "cve_ids": [
+        "CVE-2019-14235"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2019-08-02T15:15:00Z",
+      "modified": "2023-11-08T04:01:09.464696Z",
+      "references": [
+        "https://www.djangoproject.com/weblog/2019/aug/01/security-releases/",
+        "https://docs.djangoproject.com/en/dev/releases/security/",
+        "https://groups.google.com/forum/#!topic/django-announce/jIoju2-KLDs"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "Django",
+      "version": "2.1.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2019-15",
+      "cve_ids": [
+        "CVE-2019-19118"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2019-12-02T14:15:00Z",
+      "modified": "2023-11-08T04:01:27.740072Z",
+      "references": [
+        "http://www.openwall.com/lists/oss-security/2019/12/02/1",
+        "https://groups.google.com/forum/#!topic/django-announce/GjGqDvtNmWQ",
+        "https://www.djangoproject.com/weblog/2019/dec/02/security-releases/"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "Django",
+      "version": "2.1.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2019-17",
+      "cve_ids": [
+        "CVE-2019-3498"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2019-01-09T23:29:00Z",
+      "modified": "2023-11-08T04:01:33.792727Z",
+      "references": [
+        "https://www.djangoproject.com/weblog/2019/jan/04/security-releases/",
+        "https://groups.google.com/forum/#!topic/django-announce/VYU7xQQTEPQ",
+        "https://docs.djangoproject.com/en/dev/releases/security/"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "Django",
+      "version": "2.1.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2019-18",
+      "cve_ids": [
+        "CVE-2019-6975"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2019-02-11T13:29:00Z",
+      "modified": "2023-11-08T04:01:38.061202Z",
+      "references": [
+        "https://www.openwall.com/lists/oss-security/2019/02/11/1",
+        "https://www.djangoproject.com/weblog/2019/feb/11/security-releases/",
+        "https://groups.google.com/forum/#!topic/django-announce/WTwEAprR0IQ"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "Django",
+      "version": "2.1.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2019-79",
+      "cve_ids": [
+        "CVE-2019-12308"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2019-06-03T17:29:00Z",
+      "modified": "2023-11-08T04:01:03.504446Z",
+      "references": [
+        "https://www.djangoproject.com/weblog/2019/jun/03/security-releases/",
+        "https://groups.google.com/forum/#!topic/django-announce/GEbHU7YoVz8",
+        "https://docs.djangoproject.com/en/dev/releases/security/"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "Django",
+      "version": "2.1.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "PYSEC-2021-98",
+      "cve_ids": [
+        "CVE-2021-33203"
+      ],
+      "summary": "No summary available",
+      "severity": "UNKNOWN",
+      "cvss": null,
+      "published": "2021-06-08T18:15:00Z",
+      "modified": "2023-12-06T01:01:16.755410Z",
+      "references": [
+        "https://docs.djangoproject.com/en/3.2/releases/security/",
+        "https://www.djangoproject.com/weblog/2021/jun/02/security-releases/",
+        "https://groups.google.com/forum/#!forum/django-announce"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "requests",
+      "version": "2.18.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-9hjg-9r4m-mvj7",
+      "cve_ids": [
+        "CVE-2024-47081"
+      ],
+      "summary": "Requests vulnerable to .netrc credentials leak via malicious URLs",
+      "severity": "MODERATE",
+      "cvss": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N",
+      "published": "2025-06-09T19:06:08Z",
+      "modified": "2026-02-04T03:44:00.676479Z",
+      "references": [
+        "https://github.com/psf/requests/security/advisories/GHSA-9hjg-9r4m-mvj7",
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-47081",
+        "https://github.com/psf/requests/pull/6965"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "requests",
+      "version": "2.18.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-9wx4-h78v-vm56",
+      "cve_ids": [
+        "CVE-2024-35195"
+      ],
+      "summary": "Requests `Session` object does not verify requests after making first request with verify=False",
+      "severity": "MODERATE",
+      "cvss": "CVSS:3.1/AV:L/AC:H/PR:H/UI:R/S:U/C:H/I:H/A:N",
+      "published": "2024-05-20T20:15:00Z",
+      "modified": "2026-02-04T02:43:42.271895Z",
+      "references": [
+        "https://github.com/psf/requests/security/advisories/GHSA-9wx4-h78v-vm56",
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-35195",
+        "https://github.com/psf/requests/pull/6655"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "requests",
+      "version": "2.18.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-gc5v-m9x4-r6x2",
+      "cve_ids": [
+        "CVE-2026-25645"
+      ],
+      "summary": "Requests has Insecure Temp File Reuse in its extract_zipped_paths() utility function",
+      "severity": "MODERATE",
+      "cvss": "CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:U/C:N/I:H/A:N",
+      "published": "2026-03-25T16:56:28Z",
+      "modified": "2026-03-27T22:17:33.595885Z",
+      "references": [
+        "https://github.com/psf/requests/security/advisories/GHSA-gc5v-m9x4-r6x2",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-25645",
+        "https://github.com/psf/requests/commit/66d21cb07bd6255b1280291c4fafb71803cdb3b7"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "requests",
+      "version": "2.18.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-j8r2-6x86-q33q",
+      "cve_ids": [
+        "CVE-2023-32681"
+      ],
+      "summary": "Unintended leak of Proxy-Authorization header in requests",
+      "severity": "MODERATE",
+      "cvss": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:N/A:N",
+      "published": "2023-05-22T20:36:32Z",
+      "modified": "2026-02-04T03:34:13.807518Z",
+      "references": [
+        "https://github.com/psf/requests/security/advisories/GHSA-j8r2-6x86-q33q",
+        "https://nvd.nist.gov/vuln/detail/CVE-2023-32681",
+        "https://github.com/psf/requests/commit/74ea7cf7a6a27a4eeb2ae24e162bcc942a6706d5"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "jinja2",
+      "version": "2.10",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-cpwx-vrp4-4pq7",
+      "cve_ids": [
+        "CVE-2025-27516"
+      ],
+      "summary": "Jinja2 vulnerable to sandbox breakout through attr filter selecting format method",
+      "severity": "MODERATE",
+      "cvss": null,
+      "published": "2025-03-05T20:40:14Z",
+      "modified": "2026-02-04T04:14:58.595738Z",
+      "references": [
+        "https://github.com/pallets/jinja/security/advisories/GHSA-cpwx-vrp4-4pq7",
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-27516",
+        "https://github.com/pallets/jinja/commit/90457bbf33b8662926ae65cdde4c4c32e756e403"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "jinja2",
+      "version": "2.10",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-g3rq-g295-4j3m",
+      "cve_ids": [
+        "CVE-2020-28493"
+      ],
+      "summary": "Regular Expression Denial of Service (ReDoS) in Jinja2",
+      "severity": "MODERATE",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+      "published": "2021-03-19T21:28:05Z",
+      "modified": "2025-02-14T05:26:14.565160Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2020-28493",
+        "https://github.com/pallets/jinja/pull/1343",
+        "https://github.com/pallets/jinja/commit/15ef8f09b659f9100610583938005a7a10472d4d"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "jinja2",
+      "version": "2.10",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-h5c8-rqwp-cp95",
+      "cve_ids": [
+        "CVE-2024-22195"
+      ],
+      "summary": "Jinja vulnerable to HTML attribute injection when passing user input as keys to xmlattr filter",
+      "severity": "MODERATE",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N",
+      "published": "2024-01-11T15:20:48Z",
+      "modified": "2026-02-04T04:32:39.638919Z",
+      "references": [
+        "https://github.com/pallets/jinja/security/advisories/GHSA-h5c8-rqwp-cp95",
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-22195",
+        "https://github.com/pallets/jinja/commit/716795349a41d4983a9a4771f7d883c96ea17be7"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "jinja2",
+      "version": "2.10",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-h75v-3vvj-5mfj",
+      "cve_ids": [
+        "CVE-2024-34064"
+      ],
+      "summary": "Jinja vulnerable to HTML attribute injection when passing user input as keys to xmlattr filter",
+      "severity": "MODERATE",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N",
+      "published": "2024-05-06T14:20:59Z",
+      "modified": "2026-02-04T03:24:55.822549Z",
+      "references": [
+        "https://github.com/pallets/jinja/security/advisories/GHSA-h75v-3vvj-5mfj",
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-34064",
+        "https://github.com/pallets/jinja/commit/0668239dc6b44ef38e7a6c9f91f312fd4ca581cb"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "jinja2",
+      "version": "2.10",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-q2x7-8rv6-6q7h",
+      "cve_ids": [
+        "CVE-2024-56326"
+      ],
+      "summary": "Jinja has a sandbox breakout through indirect reference to format method",
+      "severity": "MODERATE",
+      "cvss": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "published": "2024-12-23T17:56:08Z",
+      "modified": "2026-02-04T03:01:31.510689Z",
+      "references": [
+        "https://github.com/pallets/jinja/security/advisories/GHSA-q2x7-8rv6-6q7h",
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-56326",
+        "https://github.com/pallets/jinja/commit/48b0687e05a5466a91cd5812d604fa37ad0943b4"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "lxml",
+      "version": "4.1.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-55x5-fj6c-h6m8",
+      "cve_ids": [
+        "CVE-2021-43818"
+      ],
+      "summary": "lxml's HTML Cleaner allows crafted and SVG embedded scripts to pass through",
+      "severity": "MODERATE",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:H/A:N",
+      "published": "2021-12-13T18:14:36Z",
+      "modified": "2026-04-09T18:26:00.311456355Z",
+      "references": [
+        "https://github.com/lxml/lxml/security/advisories/GHSA-55x5-fj6c-h6m8",
+        "https://nvd.nist.gov/vuln/detail/CVE-2021-43818",
+        "https://github.com/lxml/lxml/commit/12fa9669007180a7bb87d990c375cf91ca5b664a"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "lxml",
+      "version": "4.1.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-jq4v-f5q6-mjqq",
+      "cve_ids": [
+        "CVE-2021-28957"
+      ],
+      "summary": "lxml vulnerable to Cross-Site Scripting ",
+      "severity": "MODERATE",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+      "published": "2021-03-22T16:53:53Z",
+      "modified": "2024-09-30T17:01:18.596416Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2021-28957",
+        "https://github.com/lxml/lxml/pull/316",
+        "https://github.com/lxml/lxml/pull/316/commits/10ec1b4e9f93713513a3264ed6158af22492f270"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "lxml",
+      "version": "4.1.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-pgww-xf46-h92r",
+      "cve_ids": [
+        "CVE-2020-27783"
+      ],
+      "summary": "lxml vulnerable to Cross-site Scripting",
+      "severity": "MODERATE",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+      "published": "2021-01-07T21:54:01Z",
+      "modified": "2025-12-20T05:25:57.674445Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2020-27783",
+        "https://github.com/lxml/lxml/commit/a105ab8dc262ec6735977c25c13f0bdfcdec72a7",
+        "https://www.oracle.com//security-alerts/cpujul2021.html"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "lxml",
+      "version": "4.1.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-wrxv-2j5q-m38w",
+      "cve_ids": [
+        "CVE-2022-2309"
+      ],
+      "summary": "lxml NULL Pointer Dereference allows attackers to cause a denial of service",
+      "severity": "MODERATE",
+      "cvss": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+      "published": "2022-07-06T00:00:30Z",
+      "modified": "2025-11-04T20:44:22.372909Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2022-2309",
+        "https://github.com/lxml/lxml/commit/86368e9cf70a0ad23cccd5ee32de847149af0c6f",
+        "https://github.com/advisories/GHSA-wrxv-2j5q-m38w"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "lxml",
+      "version": "4.1.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-xp26-p53h-6h2p",
+      "cve_ids": [
+        "CVE-2018-19787"
+      ],
+      "summary": "Improper Neutralization of Input During Web Page Generation in LXML",
+      "severity": "MODERATE",
+      "cvss": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+      "published": "2022-05-13T01:13:21Z",
+      "modified": "2025-12-20T05:59:46.868377Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2018-19787",
+        "https://github.com/lxml/lxml/commit/6be1d081b49c97cfd7b3fbd934a193b668629109",
+        "https://github.com/advisories/GHSA-xp26-p53h-6h2p"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "cryptography",
+      "version": "2.6.1",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-9v9h-cgj8-h64p",
+      "cve_ids": [
+        "CVE-2024-0727"
+      ],
+      "summary": "Null pointer dereference in PKCS12 parsing",
+      "severity": "MODERATE",
+      "cvss": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+      "published": "2024-01-26T09:30:23Z",
+      "modified": "2026-05-13T15:34:03.484103Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-0727",
+        "https://github.com/github/advisory-database/pull/3472",
+        "https://github.com/openssl/openssl/pull/23362"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "cryptography",
+      "version": "2.6.1",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-w7pp-m8wf-vj6r",
+      "cve_ids": [
+        "CVE-2023-23931"
+      ],
+      "summary": "Cipher.update_into can corrupt memory if passed an immutable python object as the outbuf",
+      "severity": "MODERATE",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L",
+      "published": "2023-02-07T20:54:10Z",
+      "modified": "2026-03-30T14:42:44.815856Z",
+      "references": [
+        "https://github.com/pyca/cryptography/security/advisories/GHSA-w7pp-m8wf-vj6r",
+        "https://nvd.nist.gov/vuln/detail/CVE-2023-23931",
+        "https://github.com/pyca/cryptography/pull/8230"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "urllib3",
+      "version": "1.24.1",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-34jh-p97f-mpxf",
+      "cve_ids": [
+        "CVE-2024-37891"
+      ],
+      "summary": "urllib3's Proxy-Authorization request header isn't stripped during cross-origin redirects",
+      "severity": "MODERATE",
+      "cvss": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:N/A:N",
+      "published": "2024-06-17T21:37:20Z",
+      "modified": "2026-02-04T03:37:44.850742Z",
+      "references": [
+        "https://github.com/urllib3/urllib3/security/advisories/GHSA-34jh-p97f-mpxf",
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-37891",
+        "https://github.com/urllib3/urllib3/commit/40b6d1605814dd1db0a46e202d6e56f2e4c9a468"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "urllib3",
+      "version": "1.24.1",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-g4mx-q9vg-27p4",
+      "cve_ids": [
+        "CVE-2023-45803"
+      ],
+      "summary": "urllib3's request body not stripped after redirect from 303 status changes request method to GET",
+      "severity": "MODERATE",
+      "cvss": "CVSS:3.1/AV:A/AC:H/PR:H/UI:N/S:U/C:H/I:N/A:N",
+      "published": "2023-10-17T20:15:25Z",
+      "modified": "2026-02-04T03:30:16.767903Z",
+      "references": [
+        "https://github.com/urllib3/urllib3/security/advisories/GHSA-g4mx-q9vg-27p4",
+        "https://nvd.nist.gov/vuln/detail/CVE-2023-45803",
+        "https://github.com/urllib3/urllib3/commit/4e50fbc5db74e32cabd5ccc1ab81fc103adfe0b3"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "urllib3",
+      "version": "1.24.1",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-gwvm-45gx-3cf8",
+      "cve_ids": [
+        "CVE-2018-25091"
+      ],
+      "summary": "Authorization Header forwarded on redirect",
+      "severity": "MODERATE",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+      "published": "2023-10-15T21:30:26Z",
+      "modified": "2024-11-18T23:24:00.169548Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2018-25091",
+        "https://github.com/urllib3/urllib3/issues/1510",
+        "https://github.com/urllib3/urllib3/commit/adb358f8e06865406d1f05e581a16cbea2136fbc"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "urllib3",
+      "version": "1.24.1",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-pq67-6m6q-mj2v",
+      "cve_ids": [
+        "CVE-2025-50181"
+      ],
+      "summary": "urllib3 redirects are not disabled when retries are disabled on PoolManager instantiation",
+      "severity": "MODERATE",
+      "cvss": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N",
+      "published": "2025-06-18T17:50:00Z",
+      "modified": "2026-02-04T04:38:01.163387Z",
+      "references": [
+        "https://github.com/urllib3/urllib3/security/advisories/GHSA-pq67-6m6q-mj2v",
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-50181",
+        "https://github.com/urllib3/urllib3/commit/f05b1329126d5be6de501f9d1e3e36738bc08857"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "urllib3",
+      "version": "1.24.1",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-r64q-w8jr-g9qp",
+      "cve_ids": [
+        "CVE-2019-11236"
+      ],
+      "summary": "Improper Neutralization of CRLF Sequences in urllib3 library for Python",
+      "severity": "MODERATE",
+      "cvss": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+      "published": "2022-05-13T01:09:23Z",
+      "modified": "2024-11-18T23:01:35.378516Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2019-11236",
+        "https://github.com/urllib3/urllib3/issues/1553",
+        "https://usn.ubuntu.com/3990-2"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "urllib3",
+      "version": "1.24.1",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-wqvq-5m8c-6g24",
+      "cve_ids": [
+        "CVE-2020-26137"
+      ],
+      "summary": "CRLF injection in urllib3",
+      "severity": "MODERATE",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+      "published": "2021-06-18T18:46:43Z",
+      "modified": "2024-11-18T22:47:07.792720Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2020-26137",
+        "https://github.com/urllib3/urllib3/pull/1800",
+        "https://github.com/urllib3/urllib3/commit/1dd69c5c5982fae7c87a620d487c2ebf7a6b436b"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "httplib2",
+      "version": "0.9.2",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-gg84-qgv9-w4pq",
+      "cve_ids": [
+        "CVE-2020-11078"
+      ],
+      "summary": "CRLF injection in httplib2",
+      "severity": "MODERATE",
+      "cvss": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:N/I:H/A:N",
+      "published": "2020-05-20T15:55:47Z",
+      "modified": "2026-03-13T22:14:02.976940Z",
+      "references": [
+        "https://github.com/httplib2/httplib2/security/advisories/GHSA-gg84-qgv9-w4pq",
+        "https://nvd.nist.gov/vuln/detail/CVE-2020-11078",
+        "https://github.com/httplib2/httplib2/commit/a1457cc31f3206cf691d11d2bf34e98865873e9e"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "httplib2",
+      "version": "0.9.2",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-q48q-77qv-cf9p",
+      "cve_ids": [
+        "CVE-2013-2037"
+      ],
+      "summary": "httplib2 incorrectly checks SSL certificate",
+      "severity": "MODERATE",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+      "published": "2022-05-14T01:52:01Z",
+      "modified": "2024-09-23T17:00:58.602147Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2013-2037",
+        "https://github.com/httplib2/httplib2/issues/5",
+        "https://github.com/httplib2/httplib2/commit/40cbdcc8586f2292fa0e76a3e8c012f0cc9ed919"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "bleach",
+      "version": "2.1.3",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-m6xf-fq7q-8743",
+      "cve_ids": [
+        "CVE-2020-6816"
+      ],
+      "summary": "Bleach vulnerable to mutation XSS via whitelisted math or svg and raw tag",
+      "severity": "MODERATE",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+      "published": "2020-03-24T15:06:32Z",
+      "modified": "2026-03-13T22:15:25.195784Z",
+      "references": [
+        "https://github.com/mozilla/bleach/security/advisories/GHSA-m6xf-fq7q-8743",
+        "https://nvd.nist.gov/vuln/detail/CVE-2020-6816",
+        "https://advisory.checkmarx.net/advisory/CX-2020-4277"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "bleach",
+      "version": "2.1.3",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-q65m-pv3f-wr5r",
+      "cve_ids": [
+        "CVE-2020-6802"
+      ],
+      "summary": "XSS in Bleach when noscript and raw tag whitelisted",
+      "severity": "MODERATE",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+      "published": "2020-02-24T17:33:44Z",
+      "modified": "2026-03-13T22:00:17.879348Z",
+      "references": [
+        "https://github.com/mozilla/bleach/security/advisories/GHSA-q65m-pv3f-wr5r",
+        "https://nvd.nist.gov/vuln/detail/CVE-2020-6802",
+        "https://github.com/mozilla/bleach/commit/f77e0f6392177a06e46a49abd61a4d9f035e57fd"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "bleach",
+      "version": "2.1.3",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-vv2x-vrpj-qqpq",
+      "cve_ids": [
+        "CVE-2021-23980"
+      ],
+      "summary": "Cross-site scripting in Bleach",
+      "severity": "MODERATE",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+      "published": "2021-02-02T17:58:40Z",
+      "modified": "2026-03-13T22:00:34.004096Z",
+      "references": [
+        "https://github.com/mozilla/bleach/security/advisories/GHSA-vv2x-vrpj-qqpq",
+        "https://nvd.nist.gov/vuln/detail/CVE-2021-23980",
+        "https://github.com/mozilla/bleach/commit/79b7a3c5e56a09d1d323a5006afa59b56162eb13"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "Pillow",
+      "version": "8.2.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-pw3c-h7wp-cvhx",
+      "cve_ids": [
+        "CVE-2022-22815"
+      ],
+      "summary": "Improper Initialization in Pillow",
+      "severity": "MODERATE",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L",
+      "published": "2022-01-12T20:07:43Z",
+      "modified": "2024-10-14T18:38:03.414350Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2022-22815",
+        "https://github.com/python-pillow/Pillow/pull/5920",
+        "https://github.com/python-pillow/Pillow/commit/1e092419b6806495c683043ab3feb6ce264f3b9c"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "Pillow",
+      "version": "8.2.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-r73j-pqj5-w3x7",
+      "cve_ids": [
+        "CVE-2026-42310"
+      ],
+      "summary": "Pillow has a PDF Parsing Trailer Infinite Loop (DoS)",
+      "severity": "MODERATE",
+      "cvss": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+      "published": "2026-05-04T20:19:30Z",
+      "modified": "2026-05-13T13:56:38.908970Z",
+      "references": [
+        "https://github.com/python-pillow/Pillow/security/advisories/GHSA-r73j-pqj5-w3x7",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-42310",
+        "https://github.com/python-pillow/Pillow/pull/9519"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "Pillow",
+      "version": "8.2.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-wjx4-4jcj-g98j",
+      "cve_ids": [
+        "CVE-2026-42308"
+      ],
+      "summary": "Pillow has an integer overflow when processing fonts",
+      "severity": "MODERATE",
+      "cvss": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+      "published": "2026-05-04T20:18:45Z",
+      "modified": "2026-05-27T13:56:18.230226284Z",
+      "references": [
+        "https://github.com/python-pillow/Pillow/security/advisories/GHSA-wjx4-4jcj-g98j",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-42308",
+        "https://github.com/python-pillow/Pillow"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "Pillow",
+      "version": "8.2.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-xrcv-f9gm-v42c",
+      "cve_ids": [
+        "CVE-2022-22816"
+      ],
+      "summary": "Out-of-bounds Read in Pillow",
+      "severity": "MODERATE",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L",
+      "published": "2022-01-12T20:07:41Z",
+      "modified": "2024-10-14T18:38:42.596412Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2022-22816",
+        "https://github.com/python-pillow/Pillow/pull/5920",
+        "https://github.com/python-pillow/Pillow/commit/5543e4e2d409cd9e409bc64cdc77be0af007a31f"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "Werkzeug",
+      "version": "0.11.10",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-29vq-49wr-vm6x",
+      "cve_ids": [
+        "CVE-2026-27199"
+      ],
+      "summary": " Werkzeug safe_join() allows Windows special device names",
+      "severity": "MODERATE",
+      "cvss": null,
+      "published": "2026-02-19T20:32:45Z",
+      "modified": "2026-02-23T23:43:27.690386Z",
+      "references": [
+        "https://github.com/pallets/werkzeug/security/advisories/GHSA-29vq-49wr-vm6x",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-27199",
+        "https://github.com/pallets/werkzeug/commit/f407712fdc60a09c2b3f4fe7db557703e5d9338d"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "Werkzeug",
+      "version": "0.11.10",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-87hc-h4r5-73f7",
+      "cve_ids": [
+        "CVE-2026-21860"
+      ],
+      "summary": " Werkzeug safe_join() allows Windows special device names with compound extensions",
+      "severity": "MODERATE",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+      "published": "2026-01-08T19:51:21Z",
+      "modified": "2026-02-04T03:18:07.993642Z",
+      "references": [
+        "https://github.com/pallets/werkzeug/security/advisories/GHSA-87hc-h4r5-73f7",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-21860",
+        "https://github.com/pallets/werkzeug/commit/7ae1d254e04a0c33e241ac1cca4783ce6c875ca3"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "Werkzeug",
+      "version": "0.11.10",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-f9vj-2wh5-fj8j",
+      "cve_ids": [
+        "CVE-2024-49766"
+      ],
+      "summary": "Werkzeug safe_join not safe on Windows",
+      "severity": "MODERATE",
+      "cvss": null,
+      "published": "2024-10-25T19:43:41Z",
+      "modified": "2026-02-04T03:19:55.895802Z",
+      "references": [
+        "https://github.com/pallets/werkzeug/security/advisories/GHSA-f9vj-2wh5-fj8j",
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-49766",
+        "https://github.com/pallets/werkzeug/commit/2767bcb10a7dd1c297d812cc5e6d11a474c1f092"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "Werkzeug",
+      "version": "0.11.10",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-h2fp-xgx6-xh6f",
+      "cve_ids": [
+        "CVE-2016-10516"
+      ],
+      "summary": "Pallets Werkzeug cross-site scripting vulnerability",
+      "severity": "MODERATE",
+      "cvss": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+      "published": "2022-05-14T03:46:35Z",
+      "modified": "2024-11-19T19:10:53.946430Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2016-10516",
+        "https://github.com/pallets/werkzeug/pull/1001",
+        "https://github.com/pallets/werkzeug/commit/1034edc7f901dd645ec6e462754111b39002bd65"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "Werkzeug",
+      "version": "0.11.10",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-hgf8-39gv-g3f2",
+      "cve_ids": [
+        "CVE-2025-66221"
+      ],
+      "summary": "Werkzeug safe_join() allows Windows special device names",
+      "severity": "MODERATE",
+      "cvss": null,
+      "published": "2025-12-02T00:27:38Z",
+      "modified": "2026-02-04T02:33:10.151277Z",
+      "references": [
+        "https://github.com/pallets/werkzeug/security/advisories/GHSA-hgf8-39gv-g3f2",
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-66221",
+        "https://github.com/pallets/werkzeug/commit/4b833376a45c323a189cd11d2362bcffdb1c0c13"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "Django",
+      "version": "2.1.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-68w8-qjq3-2gfm",
+      "cve_ids": [
+        "CVE-2021-33203"
+      ],
+      "summary": "Path Traversal in Django",
+      "severity": "MODERATE",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N",
+      "published": "2021-06-10T17:21:00Z",
+      "modified": "2024-09-20T15:46:52.557962Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2021-33203",
+        "https://github.com/django/django/commit/053cc9534d174dc89daba36724ed2dcb36755b90",
+        "https://github.com/django/django/commit/20c67a0693c4ede2b09af02574823485e82e4c8f"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "Django",
+      "version": "2.1.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-6c3j-c64m-qhgq",
+      "cve_ids": [
+        "CVE-2019-11358"
+      ],
+      "summary": "XSS in jQuery as used in Drupal, Backdrop CMS, and other products",
+      "severity": "MODERATE",
+      "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+      "published": "2019-04-26T16:29:11Z",
+      "modified": "2026-03-13T21:56:20.301637Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2019-11358",
+        "https://github.com/maximebf/php-debugbar/issues/447",
+        "https://github.com/jquery/jquery/pull/4333"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "Django",
+      "version": "2.1.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-6c7v-2f49-8h26",
+      "cve_ids": [
+        "CVE-2019-12781"
+      ],
+      "summary": "Django Incorrect HTTP detection with reverse-proxy connecting via HTTPS",
+      "severity": "MODERATE",
+      "cvss": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+      "published": "2019-07-03T20:37:25Z",
+      "modified": "2024-09-18T16:26:02.265514Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2019-12781",
+        "https://docs.djangoproject.com/en/dev/releases/security",
+        "https://github.com/advisories/GHSA-6c7v-2f49-8h26"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "Django",
+      "version": "2.1.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-6mx3-3vqg-hpp2",
+      "cve_ids": [
+        "CVE-2018-16984"
+      ],
+      "summary": "Django allows unprivileged users to read the password hashes of arbitrary accounts",
+      "severity": "MODERATE",
+      "cvss": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N",
+      "published": "2018-10-03T20:07:39Z",
+      "modified": "2024-09-18T19:07:30.122563Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2018-16984",
+        "https://github.com/django/django/commit/bf39978a53f117ca02e9a0c78b76664a41a54745",
+        "https://github.com/advisories/GHSA-6mx3-3vqg-hpp2"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "Django",
+      "version": "2.1.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-7rp2-fm2h-wchj",
+      "cve_ids": [
+        "CVE-2019-12308"
+      ],
+      "summary": "Django Cross-site Scripting in AdminURLFieldWidget",
+      "severity": "MODERATE",
+      "cvss": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+      "published": "2019-06-10T18:43:25Z",
+      "modified": "2024-09-20T16:09:01.600161Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2019-12308",
+        "https://github.com/django/django/commit/09186a13d975de6d049f8b3e05484f66b01ece62",
+        "https://github.com/django/django/commit/afddabf8428ddc89a332f7a78d0d21eaf2b5a673"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "Django",
+      "version": "2.1.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-7xr5-9hcq-chf9",
+      "cve_ids": [
+        "CVE-2025-48432"
+      ],
+      "summary": "Django Improper Output Neutralization for Logs vulnerability",
+      "severity": "MODERATE",
+      "cvss": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:N/I:L/A:N",
+      "published": "2025-06-05T03:30:58Z",
+      "modified": "2026-02-04T03:48:05.224740Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-48432",
+        "https://docs.djangoproject.com/en/dev/releases/security",
+        "https://github.com/django/django"
+      ],
+      "fail_build": false
+    },
+    {
+      "package": "Django",
+      "version": "2.1.0",
+      "ecosystem": "PyPI",
+      "transitive": false,
+      "vuln_id": "GHSA-rrqc-c2jx-6jgv",
+      "cve_ids": [
+        "CVE-2024-45231"
+      ],
+      "summary": "Django allows enumeration of user e-mail addresses",
+      "severity": "MODERATE",
+      "cvss": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N",
+      "published": "2024-10-08T18:33:13Z",
+      "modified": "2024-10-30T19:23:59.139649Z",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-45231",
+        "https://github.com/django/django/commit/3c733c78d6f8e50296d6e248968b6516c92a53ca",
+        "https://github.com/django/django/commit/96d84047715ea1715b4bd1594e46122b8a77b9e2"
+      ],
+      "fail_build": false
+    }
+  ],
+  "summary": {
+    "CRITICAL": 10,
+    "HIGH": 44,
+    "MEDIUM": 0,
+    "LOW": 8,
+    "UNKNOWN": 67
+  }
+}
