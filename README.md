@@ -288,32 +288,4 @@ OSV supports these ecosystems: `PyPI`, `npm`, `RubyGems`, `Go`, `Maven`, `NuGet`
 
 ## Data Source
 
-All vulnerability data comes from [OSV.dev](https://osv.dev), an open vulnerability database aggregating from:
-
-- GitHub Advisory Database (GHSA)
-- National Vulnerability Database (NVD)
-- PyPA Advisory Database
-- RustSec Advisory Database
-- Go Vulnerability Database
-
-No account or API key is required.
-
----
-
-## Supply Chain Attack Context
-
-Supply chain attacks target the dependencies your code relies on rather than your code directly. Because most projects pull in dozens or hundreds of packages, a single compromised or vulnerable dependency can affect the entire application.
-
-Notable real-world examples:
-
-- **event-stream (2018)** — a malicious maintainer injected code into a popular npm package to steal Bitcoin wallets
-- **SolarWinds (2020)** — attackers backdoored the build pipeline of a widely used IT monitoring tool, affecting 18,000 organisations
-- **Log4Shell (2021)** — a critical remote code execution vulnerability in the Log4j logging library used by millions of Java applications, mostly pulled in as a transitive dependency
-- **xz-utils (2024)** — a multi-year social engineering effort inserted a backdoor into a core Linux compression utility
-
-This scanner addresses the known vulnerability vector. For a more complete supply chain security posture, also consider:
-
-- Pinning all dependencies to exact versions and committing lockfiles
-- Generating a Software Bill of Materials (SBOM) on each release
-- Using Sigstore for signed releases and provenance verification
-- Mirroring dependencies through a private registry
+All vulnerability data comes from [OSV.dev](https://osv.dev), an open vulnerability database
