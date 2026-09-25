@@ -265,3 +265,47 @@ jobs:
             ${{ github.workspace }}/scan-results-transitive-node.json
           retention-days: 90
           if-no-files-found: warn
+  publish-findings:
+    name: Publish findings (Splunk / CrowdStrike)
+    needs: [python-scan, node-scan, ruby-scan, clean-scan, transitive-scan]
+    # always(): run even though the sample-project scans fail on purpose.
+    # Not on pull_request: fork PRs get no secrets, and secrets should never
+    # meet code from a pull request.
+    if: ${{ always() && github.event_name != 'pull_request' }}
+    # Use [self-hosted, linux] instead if Splunk lives on a private homelab network.
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+ 
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+ 
+      - name: Install dependencies
+        run: pip install -r requirements.txt -r requirements-integrations.txt
+ 
+      # With no `name:`, v4 downloads every artifact into reports/<artifact-name>/
+      - name: Download scan reports
+        uses: actions/download-artifact@v4
+        with:
+          path: reports
+ 
+      - name: Publish
+        env:
+          SPLUNK_HEC_URL: ${{ secrets.SPLUNK_HEC_URL }}
+          SPLUNK_HEC_TOKEN: ${{ secrets.SPLUNK_HEC_TOKEN }}
+          SPLUNK_INDEX: ${{ vars.SPLUNK_INDEX }}
+          FALCON_CLIENT_ID: ${{ secrets.FALCON_CLIENT_ID }}
+          FALCON_CLIENT_SECRET: ${{ secrets.FALCON_CLIENT_SECRET }}
+          FALCON_BASE_URL: ${{ secrets.FALCON_BASE_URL }}
+        run: |
+          flags=""
+          if [ -n "$SPLUNK_HEC_TOKEN" ]; then flags="$flags --splunk"; fi
+          if [ -n "$FALCON_CLIENT_ID" ]; then flags="$flags --crowdstrike"; fi
+          if [ -z "$flags" ]; then
+            echo "No integration secrets configured; nothing to publish."
+            exit 0
+          fi
+          python publish.py reports $flags
