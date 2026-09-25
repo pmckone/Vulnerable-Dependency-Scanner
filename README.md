@@ -1,291 +1,150 @@
 # Vulnerable Dependency Scanner
 
-Scans project dependencies for known CVEs using the [OSV.dev](https://osv.dev) database. Automatically fails CI/CD builds on HIGH or CRITICAL severity findings to prevent vulnerable packages from reaching production.
+Scans project dependencies for known CVEs using the [OSV.dev](https://osv.dev) database, and fails CI/CD builds on HIGH or CRITICAL findings.
+
+Optionally sends results to **Splunk** for dashboards/alerting, and enriches findings with **CrowdStrike Falcon Spotlight** to see which vulnerable dependencies are also live on managed hosts.
 
 ---
 
 ## Features
 
-- Multi-ecosystem support — Python (`requirements.txt`), Node.js (`package.json`), Ruby (`Gemfile.lock`)
-- Real CVE data — queries the open OSV.dev vulnerability database, no API key required
-- Transitive dependency resolution — scans the full dependency tree, not just direct dependencies
-- Concurrent scanning — scans multiple packages in parallel using a thread pool
-- Build gate — exits with code `1` on HIGH/CRITICAL findings, failing CI pipelines
-- Structured output — JSON report saved after every scan
-- GitHub Actions workflow — five jobs covering Python, Node, Ruby, clean app, and full transitive tree
-- Modular codebase — split into focused modules for easy extension
+- Multi-ecosystem: Python (`requirements.txt`), Node.js (`package.json`), Ruby (`Gemfile.lock`)
+- Real CVE data from OSV.dev, no API key needed
+- Optional transitive dependency scanning (the full tree, not just what you listed)
+- Concurrent scanning, JSON report output
+- Build gate: exits `1` on HIGH/CRITICAL findings
+- Optional Splunk + CrowdStrike integrations
+- GitHub Actions workflow included
+
+---
+
+## Quick Start
+
+```
+pip install -r requirements.txt
+
+python scanner.py sample-projects/python-app --verbose        # direct deps only
+python scanner.py sample-projects/python-app --transitive     # full dependency tree
+python scanner.py ./my-app --output results.json              # custom output path
+python scanner.py ./my-app --no-fail                          # report only, don't fail build
+```
+
+Exit code `0` = no HIGH/CRITICAL findings. Exit code `1` = build should fail.
+
+---
+
+## Why Transitive Matters
+
+Your `requirements.txt` lists what you chose to install. Each of those packages pulls in its own dependencies, invisibly. A scan of direct dependencies alone can miss a critical CVE two or three layers deep — which is exactly how Log4Shell caught people off guard in 2021. `--transitive` resolves the full tree so nothing hides.
 
 ---
 
 ## Project Structure
 
 ```
-Vulnerable-Dependency-Scanner/
-├── scanner.py                      # CLI entry point
-├── requirements.txt                # scanner dependencies (python-dotenv)
-├── .env.example                    # template for local environment variables
-├── .gitignore
-├── README.md
-├── Scanner/
-│   ├── __init__.py
-│   ├── config.py                   # environment variables and constants
-│   ├── parsers.py                  # manifest file parsers per ecosystem
-│   ├── transitive.py               # full dependency tree resolution
-│   ├── osv.py                      # OSV.dev API calls and severity extraction
-│   ├── scan.py                     # concurrent scanning logic
-│   └── report.py                   # console output, JSON report, build gate
-├── sample-projects/
-│   ├── python-app/
-│   │   └── requirements.txt        # intentionally vulnerable Python deps
-│   ├── node-app/
-│   │   └── package.json            # intentionally vulnerable Node deps
-│   ├── ruby-app/
-│   │   └── Gemfile.lock            # intentionally vulnerable Ruby deps
-│   └── clean-app/
-│       └── requirements.txt        # minimal deps for build pass verification
-└── .github/
-    └── workflows/
-        └── security-scan.yml       # GitHub Actions CI workflow
+scanner.py                    # scan + build gate
+publish.py                    # optional: send results to Splunk / CrowdStrike
+Scanner/
+├── parsers.py                # reads manifest files per ecosystem
+├── transitive.py             # resolves full dependency tree
+├── osv.py                    # queries OSV.dev
+├── scan.py                   # runs scans concurrently
+├── report.py                 # console + JSON output, build gate
+└── integrations/
+    ├── splunk.py              # ships events to Splunk HEC
+    └── crowdstrike.py         # Falcon Spotlight enrichment
+tests/                        # unit tests (fake Splunk + Falcon, no live creds needed)
+lab/docker-compose.splunk.yml # throwaway local Splunk for testing
+sample-projects/              # intentionally vulnerable test apps
+.github/workflows/            # CI pipeline
 ```
-
----
-
-## Quick Start
-
-Make sure you have Python 3.8 or higher installed, then run:
-
-```bash
-# install scanner dependencies
-pip install -r requirements.txt
-
-# scan a project (direct dependencies only)
-python scanner.py sample-projects/python-app --verbose
-
-# scan the full dependency tree including transitive dependencies
-python scanner.py sample-projects/python-app --transitive --verbose
-
-# scan any directory
-python scanner.py ./my-app
-
-# save the report to a specific file
-python scanner.py ./my-app --output results.json
-
-# report only, never fail the build
-python scanner.py ./my-app --no-fail
-```
-
-### Exit codes
-
-| Code | Meaning |
-|------|---------|
-| `0`  | Scan passed — no HIGH/CRITICAL findings |
-| `1`  | Scan failed — one or more blocking vulnerabilities found |
-
----
-
-## Direct vs Transitive Dependencies
-
-Your `requirements.txt` lists the packages you explicitly chose to install. Those are direct dependencies. But each of those packages has its own dependencies, and those have dependencies too. None of those appear in your manifest file but they all get installed silently. Those are transitive dependencies.
-
-Example:
-
-```
-requests==2.18.0          <- you listed this (direct)
-  └── urllib3             <- requests needs this (transitive)
-  └── certifi             <- requests needs this (transitive)
-       └── cryptography   <- buried two levels deep (transitive)
-```
-
-If `urllib3` has a critical CVE, a scan of direct dependencies only would miss it entirely because it never appears in `requirements.txt`. The `--transitive` flag resolves the full tree and scans every package in it.
-
-This is exactly how Log4Shell worked in 2021. Most affected teams had never heard of Log4j — it was pulled in silently by something else they were using.
-
-```
-# without --transitive
-Scanned: 19 dependencies
-
-# with --transitive
-Scanned: 60+ dependencies
-```
-
----
-
-## How It Works
-
-1. The scanner detects a supported manifest file in the target directory
-2. It parses every dependency name and version from that file
-3. If `--transitive` is passed, it resolves the full dependency tree using pip or npm
-4. All packages are submitted to a thread pool and scanned concurrently against OSV.dev
-5. The scanner extracts the severity and CVE IDs from each response
-6. A full report is printed to the console and saved as JSON
-7. If any finding is HIGH or CRITICAL, the process exits with code 1, failing the build
-
-### Severity levels
-
-| Severity | Build gate | What it means |
-|----------|------------|---------------|
-| CRITICAL | Fail       | Trivial to exploit or catastrophic impact |
-| HIGH     | Fail       | Significant risk, exploitable under common conditions |
-| MEDIUM   | Pass       | Exploitable but requires specific conditions |
-| LOW      | Pass       | Minimal risk or very difficult to exploit |
-
----
-
-## Module Breakdown
-
-| File | Responsibility |
-|------|---------------|
-| `scanner.py` | CLI argument parsing and scan orchestration |
-| `Scanner/config.py` | Reads environment variables, defines constants |
-| `Scanner/parsers.py` | Parses requirements.txt, package.json, Gemfile.lock |
-| `Scanner/transitive.py` | Resolves full dependency tree via pip and npm |
-| `Scanner/osv.py` | Sends queries to OSV.dev, extracts severity |
-| `Scanner/scan.py` | Runs concurrent scans using ThreadPoolExecutor |
-| `Scanner/report.py` | Prints console report, writes JSON, runs build gate |
 
 ---
 
 ## Configuration
 
-The scanner reads configuration from environment variables. For local development, create a `.env` file by copying `.env.example`:
+Copy `.env.example` to `.env` and fill in what you need:
 
-```bash
-cp .env.example .env
+| Variable | Required for | Notes |
+| --- | --- | --- |
+| `PUBLICAPI` | scanner | defaults to `https://api.osv.dev/v1/query` |
+| `MAX_WORKERS` | scanner | defaults to `10` |
+| `SPLUNK_HEC_URL`, `SPLUNK_HEC_TOKEN` | Splunk | see below |
+| `SPLUNK_INDEX`, `SPLUNK_CA_BUNDLE`, `SPLUNK_VERIFY_TLS` | Splunk | optional |
+| `FALCON_CLIENT_ID`, `FALCON_CLIENT_SECRET` | CrowdStrike | needs the Vulnerabilities/Spotlight read scope |
+| `FALCON_BASE_URL` | CrowdStrike | only if not on the default US-1 cloud |
+
+`.env` is gitignored — never commit real credentials. In CI, use repository secrets instead.
+
+---
+
+## Splunk & CrowdStrike Integrations
+
+`scanner.py` writes a JSON report. `publish.py` reads it and optionally ships it to Splunk and/or enriches it with CrowdStrike data. This is a separate step on purpose — an integration outage can never affect whether a build passes.
+
+```
+pip install -r requirements-integrations.txt   # only needed for --crowdstrike
+
+python scanner.py ./my-app --no-fail
+python publish.py scan-results.json --splunk --crowdstrike
 ```
 
-Available variables:
+### Splunk
 
-| Variable | Default | Description |
-|----------|---------|-------------|
-| `PUBLICAPI` | `https://api.osv.dev/v1/query` | OSV API endpoint |
-| `MAX_WORKERS` | `10` | Number of parallel scan threads |
+Fastest way to try it locally:
 
-In GitHub Actions, set these as repository secrets or variables and reference them in the workflow:
-
-```yaml
-env:
-  PUBLICAPI: ${{ secrets.PUBLICAPI }}
+```
+# in .env: SPLUNK_PASSWORD, SPLUNK_HEC_TOKEN, SPLUNK_HEC_URL=https://localhost:8088, SPLUNK_VERIFY_TLS=false
+docker compose --env-file .env -f lab/docker-compose.splunk.yml up -d
 ```
 
-The `.env` file is gitignored and should never be committed.
+Wait a few minutes for it to report healthy, then run `publish.py --splunk` and search `index=main sourcetype="vuln_scanner:*"` at http://localhost:8000.
+
+Against a real Splunk instance: create a HEC token (Settings → Data inputs → HTTP Event Collector), set `SPLUNK_HEC_URL`/`SPLUNK_HEC_TOKEN`, and use `SPLUNK_CA_BUNDLE` to trust a self-signed cert instead of disabling TLS checks.
+
+Each scan sends one summary event and one event per finding, tagged `vuln_scanner:summary` / `vuln_scanner:finding`.
+
+### CrowdStrike
+
+Needs a Falcon tenant with Spotlight and hosts reporting in, plus an API client with the **Vulnerabilities: Read** scope. Set `FALCON_CLIENT_ID`/`FALCON_CLIENT_SECRET`, then run `publish.py --crowdstrike`.
+
+Findings gain a `falcon_affected_hosts` field — how many managed hosts have that CVE open. Expect a lot of zeros: Spotlight tracks OS/installed software, so it matches best with things like Log4j or OpenSSL, less often with a bare Python or npm library.
+
+Only host **counts** are kept — never hostnames or sensor IDs — so it's safe to appear in public CI logs.
+
+### In GitHub Actions
+
+Add the `publish-findings` job (see `workflow/publish-findings.yml`) to `security-scan.yml`, then add these as repo secrets:
+- Splunk: `SPLUNK_HEC_URL`, `SPLUNK_HEC_TOKEN`
+- CrowdStrike: `FALCON_CLIENT_ID`, `FALCON_CLIENT_SECRET`
+
+The job only runs an integration if its secrets are set, and skips on pull requests. Note: GitHub-hosted runners can't reach a Splunk instance on a private network — use a self-hosted runner or a tunnel for that case.
+
+---
+
+## Testing
+
+```
+python -m unittest discover -s tests -t .
+```
+
+Splunk tests run against a local fake HEC server; CrowdStrike tests run against a fake Falcon client. No live credentials needed to test the code — but that also means these tests don't prove your actual Splunk/Falcon setup works. Verify that with the steps above.
 
 ---
 
 ## GitHub Actions
 
-The workflow runs five jobs automatically on every push to `main` or `develop`, on all pull requests, and daily at 06:00 UTC to catch newly disclosed CVEs.
+Runs on push to `main`/`develop`, on PRs, and daily at 06:00 UTC.
 
-| Job | What it scans | Expected result |
-|-----|--------------|-----------------|
-| `python-scan` | `sample-projects/python-app` | Fail — many known CVEs |
-| `node-scan` | `sample-projects/node-app` | Fail — many known CVEs |
-| `ruby-scan` | `sample-projects/ruby-app` | Fail — known vulnerable gems |
-| `clean-scan` | `sample-projects/clean-app` | Pass — minimal safe packages |
-| `transitive-scan` | Python and Node full tree | Shows transitive findings |
+| Job | Scans | Expected result |
+| --- | --- | --- |
+| `python-scan` | `sample-projects/python-app` | Fail (known CVEs) |
+| `node-scan` | `sample-projects/node-app` | Fail (known CVEs) |
+| `ruby-scan` | `sample-projects/ruby-app` | Fail (known CVEs) |
+| `clean-scan` | `sample-projects/clean-app` | Pass |
+| `transitive-scan` | Python + Node full tree | Shows transitive findings |
+| `publish-findings` | all reports above | Sends to Splunk/CrowdStrike if configured |
 
-Each job uploads its JSON report as a downloadable artifact retained for 90 days. If a scan fails on a pull request, it posts a comment to the PR listing every blocking vulnerability.
-
-To trigger a scan manually without pushing code:
-
-1. Go to your repo on GitHub
-2. Click the Actions tab
-3. Click Supply Chain Security Scan on the left
-4. Click Run workflow
+Each job uploads its JSON report as an artifact; failed scans on a PR get a comment with the findings.
 
 ---
-
-## Sample Results
-
-Running the scanner against the included sample projects produces real findings from OSV.dev. From a recent scan of `sample-projects/python-app`:
-
-```
-Scanned:     19 dependencies
-Findings:    172 total vulnerabilities
-
-CRITICAL     10
-HIGH         44
-LOW          8
-UNKNOWN      67
-
-BUILD FAILED - 54 HIGH/CRITICAL vulnerability(ies) found.
-```
-
-Notable findings include prototype pollution in lodash, remote code execution in handlebars, sandbox escape in vm2, authentication bypass in paramiko, and SQL injection in Django.
-
-The packages are intentionally outdated. Do not use these versions in a real project.
-
----
-
-## Adding More Ecosystems
-
-To add support for a new package manager, add a parser function to `Scanner/parsers.py` and register it in `detect_and_parse()`.
-
-Example — adding Go module support:
-
-```python
-def parse_go_sum(filepath):
-    deps = []
-    with open(filepath) as f:
-        for line in f:
-            match = re.match(r"^([^\s]+)\s+v([\d\.]+)", line)
-            if match:
-                deps.append({
-                    "name": match.group(1),
-                    "version": match.group(2),
-                    "ecosystem": "Go",
-                    "raw": line.strip(),
-                    "transitive": False
-                })
-    return deps
-```
-
-Then add it to the checks list in `detect_and_parse()`:
-
-```python
-(project_path / "go.sum", parse_go_sum, "go.sum", "go"),
-```
-
-OSV supports these ecosystems: `PyPI`, `npm`, `RubyGems`, `Go`, `Maven`, `NuGet`, `crates.io`, `Hex`, `Packagist`
-
----
-
-## JSON Report Format
-
-```json
-{
-  "scan_time": "2026-06-05T15:33:22",
-  "deps_scanned": 19,
-  "transitive_mode": false,
-  "total_findings": 172,
-  "direct_findings": 172,
-  "transitive_findings": 0,
-  "workers_used": 10,
-  "summary": {
-    "CRITICAL": 10,
-    "HIGH": 44,
-    "MEDIUM": 0,
-    "LOW": 8,
-    "UNKNOWN": 67
-  },
-  "findings": [
-    {
-      "package": "PyYAML",
-      "version": "5.1",
-      "ecosystem": "PyPI",
-      "transitive": false,
-      "vuln_id": "GHSA-6757-jp84-gxfx",
-      "cve_ids": ["CVE-2020-14343"],
-      "summary": "Improper Input Validation in PyYAML",
-      "severity": "CRITICAL",
-      "references": ["https://nvd.nist.gov/vuln/detail/CVE-2020-14343"],
-      "fail_build": true
-    }
-  ]
-}
-```
-
----
-
-## Data Source
-
-All vulnerability data comes from [OSV.dev](https://osv.dev), an open vulnerability database
